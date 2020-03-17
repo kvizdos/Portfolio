@@ -1,0 +1,508 @@
+:root {
+    --content-padding: 60px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+
+}
+
+h1, h2, h3, p, ul {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    color: #474747;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+.page.noNav {
+    height: 100vh;
+    width: 100vw;
+    max-width:100%;
+    max-height:100%;
+}
+
+.noshow {
+    display: none;
+}
+
+nav.navbar {
+    position: relative;
+    z-index: 10;
+    width: calc(100% - 25px);
+    box-shadow: 0 5px 8px -2px #00000030;
+    height: 65px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+}
+
+nav.sticky {
+    position: fixed;
+    top: 0;
+}
+
+nav.navbar p {
+    font-weight: bold;
+}
+
+nav.navbar * {
+    padding: 0;
+    margin: 0;
+}
+
+#page{
+    overflow: hidden;
+}
+
+.spacer {
+    content: "";
+    height: 0;
+    margin-bottom: 65px;
+    width: 100%;
+}
+
+.page.split {
+    transition: .5s;
+    background: url('./assets/images/background.jpg');
+    background-size: 100vw 100vh;
+    /* background-attachment: fixed; */
+
+    min-height: calc(100vh - 65px - (var(--content-padding)));
+}
+
+.page.split section {
+    height: auto;
+    background-color: white;
+}
+
+.page {
+    transition: .5s;
+}
+
+.page section.container {
+    padding: calc(var(--content-padding) / 2);
+}
+
+.page section p {
+    font-size: 1.5em;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerBy3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#downArrow {
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#hero {
+    display: none;
+}
+
+#hero section h1 {
+    font-size: 3em;
+    padding: 0;
+    margin: 0;
+}
+
+#hero section p {
+    margin: 15px;
+}
+
+#hero section article {
+    padding: 25px;
+}
+
+#hero section article p {
+    font-size: 1.5em;
+}
+
+#whoIveWorkedFor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+#whoIveWorkedFor li {
+    margin: 15px;
+}
+
+.grid {
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 5px 8px #00000030;
+}
+
+.item img {
+    display: none;
+}
+
+.item:not(:first-of-type) {
+    display: none;
+}
+
+.item a {
+    text-decoration: none;
+    color: #757C8E;
+    text-align: center;
+}
+
+p.small {
+    color: rgb(190, 190, 190);
+}
+
+.topAndBottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.topAndBottom .bottom {
+    margin-top: 50px;
+}
+
+.companyBadge {
+    box-shadow: 0 3px 10px #00000030;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 10px;
+    display: flex;
+    width: calc(100% - 20px);
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.companyBadge a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.workContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));;
+    grid-gap: 25px;
+}
+
+#quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(76, 96, 143) url('assets/images/quote2.svg');
+    background-attachment: fixed;
+    background-size: 200px;
+    color: white;
+    padding: 50px;
+
+}
+
+#quote blockquote {
+    font-family: 'Source Code Pro', monospace;
+}
+
+#quote blockquote p {
+    font-size: 1.5em;
+    color: white;
+}
+
+#quote blockquote footer {
+    color: rgb(228, 228, 228);
+    font-size: 1em;
+}
+
+section#portfolio {
+    position: relative;
+    box-shadow: 0 0 20px #23257d;
+}
+
+section#work {
+    background: url('./assets/images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: grid;
+
+    padding: 50px;
+}
+
+section #work .workContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section #work .workContainer .companyBadge {
+    margin: 10px;
+    width: 100%;
+    padding: 20px;
+}
+
+section#work #aboutCo {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    background-color: white;
+    /* width: 50%; */
+    border-radius: 15px;
+    padding: 30px;
+    transition: .2s;
+}
+
+.whatIDid {
+    display: none;
+}
+
+.whatIDid.active {
+    display: block;
+}
+
+.whatIDid .tlItem p.date {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: #BEBEBE;
+    margin-top: 15px;
+}
+
+.whatIDid .tlItem {
+    font-size: .75em;
+}
+
+hr {
+    width: 75%;
+    border: 1px solid #474747;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+ul#certs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+}
+
+ul#certs li:hover {
+    cursor: inherit;
+}
+
+ul#certs li img {
+    width: 100%;
+}
+
+ul#certs li p {
+    text-align: center;
+}
+
+ul li {
+    padding: 5px;
+    font-size: 1.1em;
+}
+
+ul li.active {
+    font-weight: bold;
+}
+
+ul li:not(.active) {
+    cursor: pointer;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 10px;
+    grid-auto-flow: dense;
+    list-style: none;
+    margin: 1em auto;
+    padding: 0;
+}
+
+.wrapper li.webApp {
+    grid-column-end: span 2;
+}
+.wrapper li img {
+   display: block;
+   object-fit: cover;
+   width: 100%;
+   height: 100%;
+   box-shadow: 0 5px 8px #00000030;
+   border-radius: 15px;
+   transition: .2s;
+   overflow: hidden;
+   background-color: none;
+}
+
+.whatIDid a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.companyBadge.active {
+    transform: scale(1.05);
+}
+
+
+.page#about {
+    position: relative;
+    box-shadow: 0 0 20px #23257d;
+}
+
+@media (min-width: 915px) {
+
+    #quote i {
+        font-size: 2em;
+        color: white;
+    } 
+
+    #quote blockquote {
+        width: 50%;
+
+    }
+
+    #quote blockquote p {
+        font-size: 3em;
+        color: white;
+    }
+    
+    #quote blockquote footer {
+        color: rgb(228, 228, 228);
+        font-size: 1.5em;
+    }
+
+    .wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+    }
+
+    .wrapper li img:hover {
+        cursor: pointer;
+        transform: scale(1.03);
+        transition: .2s;
+    }
+
+    .whatIDid h3 {
+        margin-top: 15px;
+    }
+
+    .whatIDid .tlItem {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        font-size: 1em;
+    }
+
+    .whatIDid .tlItem p.date {
+        font-size: 2em;
+        font-weight: bold;
+        color: #BEBEBE;
+        margin: 0;
+    }
+
+    section#work {
+        grid-template-columns: 25% 75%;
+
+    }
+
+    section#work #aboutCo {
+        
+        width: 75%;
+        /* max-height: 275px;
+        overflow: scroll; */
+    }
+
+    
+
+    .topAndBottom .bottom {
+        margin-top: 0;
+    }
+
+    .companyBadge {
+        transition: .2s;
+        transform: translateZ(0);
+    }
+
+    .companyBadge:not(.active):hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: .2s;
+    }
+
+    #hero {
+        display: flex;
+    }
+
+    .page section.container {
+        padding: var(--content-padding);
+    }
+
+    .page.split section {
+        width: 60vw;
+        background-color: white;
+        min-height: calc(100vh - 65px - (var(--content-padding) * 2));
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 25px;
+    }
+    
+    .item {
+        transform: translateZ(0);
+        transition: .2s;
+    }
+
+    .item img {
+        display: inherit;
+    }
+    
+    .item a {
+        padding: 10px;
+    }
+
+    .item:hover {
+        transform: scale(1.03);
+        transition: .2s transform;
+    }
+
+    .item:not(:first-of-type) {
+        display: flex;
+    }
+
+    #hero section article {
+        padding: 0;
+    }    
+}  

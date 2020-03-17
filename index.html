@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kenton Vizdos</title>
+    <script src="https://kit.fontawesome.com/f40d5f26b8.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="assets/portfolio.js"></script>
+    <script src="assets/nav.js"></script>
+</head>
+<body>
+    <section id="hero" class="page noNav centerBy3">
+        <section></section>
+        <section>
+            <article class="text-center">
+                <h1>Kenton Vizdos</h1>
+                <p>I'm a high school student in Richmond, VA studying full stack web development</p>
+            </article>
+
+            <!-- <p class="text-center small">Read my latest blog post:</p>
+
+            <section class="grid 3x1">
+                <article class="item">
+                    <img src="./assets/images/placeholder.jpg">
+                    <a href="#">safihdfsegidof gdiofhgo dfhgoidfghj oidgjidfgj oidfgjiodfg joidfgjoifdg odigjoidfg oidfg oidfghj oidfjgoidfjgiodfj iowregjoirh giubnwe f</a>
+                </article>
+                <article class="item">
+                    <img src="./assets/images/placeholder.jpg">
+                    <a href="#">safihdfsegidof gdiofhgo dfhgoidfghj oidgjidfgj oidfgjiodfg j</a>
+                </article>
+                <article class="item">
+                    <img src="./assets/images/placeholder.jpg">
+                    <a href="#">safihdfsegidof gdiofhgo dfhgoidfghj oidgjidfgj g oidfg oidfghj oidfjgoidfjgiodfj iowregjoirh giubnwe f</a>
+                </article>
+            </section> -->
+
+            <ul id="whoIveWorkedFor" class="flatList">
+                <li><img src="./assets/images/cos/singlestone.png"></li>
+                <li><img src="./assets/images/cos/metactf.png"></li>
+            </ul>
+        </section>
+
+        <i class="fas fa-chevron-down" id="downArrow" onclick="swipeFirstPage()"></i>
+    </section>
+
+    
+    <nav class="navbar">
+        <p>Kenton Vizdos</p>
+    </nav>
+    <article class="spacer noshow"></article>
+
+    <section id="page">
+        <section class="page" id="about">
+            <section class="container">
+                <h2>About Me</h2>
+                <p>My name is Kenton Vizdos and I am a junior at Deep Run High School's Center for Information Technology (CIT). Over the last few years, you may have seen me around town at ScrumRVA, Agile Richmond, Innovate Virginia, or one of the many other amazing Richmond events. Through a lot of independent learning, I've managed to learn many advanced web development frameworks and techniques such as Angular, React, NodeJS, Bootstrap, and more. Also, I've become a Certified Scrum Master (CSM) and Certified Scrum Product Owner (CSPO) which have helped me immensely while creating all of my projects.</p>
+            
+            
+                <ul id="certs">
+                    <li><img src="assets/images/certs/csm.png"></li>
+                    <li><img src="assets/images/certs/cspo.png"></li>
+                </ul>
+            </section>
+        </section>
+        <section class="page" id="quote">
+            <i class="fas fa-quote-left"></i>
+            <blockquote>
+                <p>Programs must be written for people to read, and only incidentally for machines to execute.</p>
+                <footer>- Harold Abelson</footer>
+            </blockquote>
+
+        </section>
+
+        <section class="page" id="portfolio">
+            <section class="container">
+                <h2>What have I made?</h2>
+                <ul class="categorySelector">
+                    <li onclick="portfolio(this, 'all')" class="active">all</li>
+                    <li onclick="portfolio(this, 'web')">web</li>
+                    <li onclick="portfolio(this, 'mobile')">mobile</li>
+                </ul>
+                <ul id="portfolioWrapper" class="wrapper"></ul>
+            </section>
+        </section>
+
+        <section class="page" id="work">
+            <section class="container" id="companies">
+                <article class="workContainer"></article>    
+            </section>
+
+            <section class="container" id="aboutCo"></section>
+        </section>
+
+    </section>
+</body>
+</html>
