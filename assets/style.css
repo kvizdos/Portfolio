@@ -291,19 +291,15 @@ section#work {
     background-repeat: no-repeat;
 
     display: grid;
-
-    padding: 50px;
 }
 
 section #work .workContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 section #work .workContainer .companyBadge {
-    margin: 10px;
-    width: 100%;
+    width: calc(100% - 40px);
     padding: 20px;
 }
 
@@ -316,6 +312,7 @@ section#work #aboutCo {
     border-radius: 15px;
     padding: 30px;
     transition: .2s;
+    margin: 30px;
 }
 
 .whatIDid {
