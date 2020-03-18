@@ -10,9 +10,12 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/modal.css">
 
+    <script src="assets/modal.js"></script>
     <script src="assets/portfolio.js"></script>
     <script src="assets/nav.js"></script>
+
 </head>
 <body>
     <section id="hero" class="page noNav centerBy3">
@@ -52,6 +55,16 @@
     
     <nav class="navbar">
         <p>Kenton Vizdos</p>
+        <article class="right">
+            <ul id="navlist">
+                <li><a onclick="closeNav()" href="#about" class="active">About</a></li>
+                <li><a onclick="closeNav()" href="#portfolio">Portfolio</a></li>
+                <li><a onclick="closeNav()" href="#work">Work Experience</a></li>
+                <li>Blog</li>
+            </ul>
+
+            <i class="fas fa-bars" onclick="openNav()"></i>
+        </article>
     </nav>
     <article class="spacer noshow"></article>
 
@@ -60,7 +73,6 @@
             <section class="container">
                 <h2>About Me</h2>
                 <p>My name is Kenton Vizdos and I am a junior at Deep Run High School's Center for Information Technology (CIT). Over the last few years, you may have seen me around town at ScrumRVA, Agile Richmond, Innovate Virginia, or one of the many other amazing Richmond events. Through a lot of independent learning, I've managed to learn many advanced web development frameworks and techniques such as Angular, React, NodeJS, Bootstrap, and more. Also, I've become a Certified Scrum Master (CSM) and Certified Scrum Product Owner (CSPO) which have helped me immensely while creating all of my projects.</p>
-            
             
                 <ul id="certs">
                     <li><img src="assets/images/certs/csm.png"></li>
@@ -96,6 +108,30 @@
 
             <section class="container" id="aboutCo"></section>
         </section>
+
+        <section class="page" id="contact">
+            <section class="container">
+                <h2>Want to get in touch?</h2>
+                <p>Shoot me an email at me@kentonvizdos.com, I'd love to chat! If you're interested, I'm open for some freelance/contract work too, just let me know.</p>
+            </section>
+        </section>
+
+
+        <footer class="page">
+            <section class="container">
+            <small>&copy; Kenton Vizdos 2020</small>
+            </section>
+        </footer>
+    </section>
+
+    <section id="modal">
+        <article id="modalContent">
+            <i class="fas fa-times" onclick="closeModal()"></i>
+            <article id="content">
+                <h1>Hello</h1>
+            </article>
+        </article>
+        <article id="modalCloser" class="modalSide" onclick="closeModal()"></article>
 
     </section>
 </body>

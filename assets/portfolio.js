@@ -89,9 +89,78 @@ const portfolioItems = [
 ];
 
 const renderPortfolioItems = () => {
+    let i = 0;
     for(const item of portfolioItems) {
-        document.getElementById("portfolioWrapper").innerHTML += `<li class="${item.type == "mobile" ? "mobileApp" : "webApp"}"><img src="assets/images/projects/${item.short || item.name.replace(/\ /g, '').toLowerCase()}.png"></li>`
+        document.getElementById("portfolioWrapper").innerHTML += `<li class="${item.type == "mobile" ? "mobileApp" : "webApp"}" onclick="openPortfolioItem(${i})"><img src="assets/images/projects/${item.short || item.name.replace(/\ /g, '').toLowerCase()}.png"></li>`
+        i++;
     }
+}
+
+const openPortfolioItem = (i) => {
+    const item = portfolioItems[i];
+
+    let data = "";
+
+    let status = "";
+    let github = "";
+    let live = "";
+
+    if(item.status != undefined) {
+        status = `
+            <p class="status ${item.status.toLowerCase()}">${item.status == "Limited" ? "This piece is getting minimal updates." : "This piece has been archived and is no longer getting updates."}</p>
+        `
+    }
+
+    if(item.github != undefined) {
+        github = `<a href="${item.github}" target="_blank" class='btn github'><i class="fab fa-github-alt"></i> GitHub</a>`
+    }
+
+    if(item.live != undefined) {
+        live = `<a href="${item.live}" target="_blank" class='btn live'><i class="fas fa-external-link-alt"></i> Visit</a>`
+    }
+
+    console.log(github)
+
+    if(item.type == "mobile") {
+        data = `
+        
+        <section class="splitModal">
+            <article class="left">
+                <img src="assets/images/projects/${item.short || item.name.replace(/\ /g, '').toLowerCase()}.png">
+            </article>
+            <article class="right">
+                ${status}
+                <h2>${item.name}</h2>
+                <p>${item.description}</p>
+                <section class="buttons">
+                    ${github}
+                    ${live}
+                </section>
+            </article>
+        </section>
+
+        `
+    } else {
+        setXlModal();
+        data = `
+        <section class="modalBgImg">
+            <img src="assets/images/projects/${item.short || item.name.replace(/\ /g, '').toLowerCase()}.png">
+            <article>
+                ${status}
+                <h2>${item.name}</h2>
+                <p>${item.description}</p>
+                <section class="buttons">
+                    ${github}
+                    ${live}
+                </section>
+            </article>
+        </section>
+        `
+    }
+
+    setModalContent(data);
+
+    openModal(data);
 }
 
 const renderWorkExperience = () => {

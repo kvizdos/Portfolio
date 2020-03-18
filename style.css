@@ -43,6 +43,7 @@ nav.navbar {
     display: flex;
     align-items: center;
     padding-left: 25px;
+    justify-content: space-between;
 }
 
 nav.sticky {
@@ -57,6 +58,41 @@ nav.navbar p {
 nav.navbar * {
     padding: 0;
     margin: 0;
+}
+
+nav.navbar .right ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    flex-direction: column;
+    padding: 25px;
+    transform: translateX(-100vh);
+    transition: .2s;
+}
+
+nav.navbar .right ul.show {
+    transform: translateX(0);
+}
+
+nav.navbar ul li {
+    margin: 15px;
+}
+
+nav.navbar ul li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+nav.navbar ul li a.active {
+    font-weight: bold;
+}
+
+nav.navbar .right i {
+    margin: 45px;
+    display: block;
 }
 
 #page{
@@ -383,6 +419,22 @@ ul li:not(.active) {
 }
 
 @media (min-width: 915px) {
+    nav.navbar .right i {
+        display: none;
+    }
+    nav.navbar .right ul {
+        position: initial;
+        width: initial;
+        height: fit-content;
+        background-color: unset;
+        flex-direction: row;
+        padding: 0;
+        transform: translate(0)
+    }
+
+    nav.navbar ul li {
+        margin: 45px;
+    }
 
     #quote i {
         font-size: 2em;
