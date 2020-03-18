@@ -88,42 +88,6 @@
     width: 100%;
 }
 
-#modal #modalContent #content.xl {
-    height: 70vh;
-}
-
-#modal #modalContent .modalBgImg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-}
-
-#modal #modalContent .modalBgImg img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -10;
-}
-
-#modal #modalContent .modalBgImg article {
-    width: 75%;
-    background-color: rgba(1,1,1,.55);
-    border-radius: 15px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: white;
-
-    padding: 25px;
-}
-
-#modal #modalContent .modalBgImg article p {
-    color: white;
-}
 h2 {
     margin: 0;
     padding: 0;
@@ -144,9 +108,10 @@ h2 {
 
 .status {
     padding: 5px;
-    margin: 5px;
     border: 2px solid black;
     border-radius: 5px;
+    width: fit-content;
+    margin-bottom: 10px;
 }
 
 .btn {
@@ -154,29 +119,11 @@ h2 {
     margin: 5px;
     border: 2px solid black;
     border-radius: 5px;
+    color: black;
 }
-
-.btn.github {
-    border: 2px solid white;
-    color: white;
-    transition: .2s;
-}
-
 .btn.live {
     border: 2px solid rgb(6, 160, 250);
     color: rgb(6, 160, 250);
-    transition: .2s;
-}
-
-.btn.github:hover {
-    background-color: white;
-    color: black;
-    transition: .2s;
-}
-
-.btn.live:hover {
-    background-color: rgb(6, 160, 250);
-    color: white;
     transition: .2s;
 }
 
@@ -201,5 +148,10 @@ a.btn {
         display: grid;
         grid-gap: 25px;
         grid-template-columns: 25% 75%;
+    }
+
+    #modal #modalContent .splitModal.largerImg {
+        grid-template-columns: 45% 55%;
+
     }
 }

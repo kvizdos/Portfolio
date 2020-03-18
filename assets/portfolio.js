@@ -121,10 +121,10 @@ const openPortfolioItem = (i) => {
 
     console.log(github)
 
-    if(item.type == "mobile") {
+    // if(item.type == "mobile") {
         data = `
         
-        <section class="splitModal">
+        <section class="splitModal${item.type != "mobile" ? ' largerImg' : ''}">
             <article class="left">
                 <img src="assets/images/projects/${item.short || item.name.replace(/\ /g, '').toLowerCase()}.png">
             </article>
@@ -140,23 +140,22 @@ const openPortfolioItem = (i) => {
         </section>
 
         `
-    } else {
-        setXlModal();
-        data = `
-        <section class="modalBgImg">
-            <img src="assets/images/projects/${item.short || item.name.replace(/\ /g, '').toLowerCase()}.png">
-            <article>
-                ${status}
-                <h2>${item.name}</h2>
-                <p>${item.description}</p>
-                <section class="buttons">
-                    ${github}
-                    ${live}
-                </section>
-            </article>
-        </section>
-        `
-    }
+    // } else {
+    //     data = `
+    //     <section class="withImg">
+    //         <img src="assets/images/projects/${item.short || item.name.replace(/\ /g, '').toLowerCase()}.png">
+    //         <article>
+    //             ${status}
+    //             <h2>${item.name}</h2>
+    //             <p>${item.description}</p>
+    //             <section class="buttons">
+    //                 ${github}
+    //                 ${live}
+    //             </section>
+    //         </article>
+    //     </section>
+    //     `
+    // }
 
     setModalContent(data);
 

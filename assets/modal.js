@@ -18,21 +18,8 @@ const closeModal = () => {
     }, 300)
 }
 
-const setXlModal = () => {
-    const modalContent = document.querySelector("#modal #modalContent #content");
-    modalContent.classList.add("xl");
-}
-
 const setModalContent = (data) => {
     const modalContent = document.querySelector("#modal #modalContent #content");
 
     modalContent.innerHTML = data;
-}
-
-const showStatus = (el, type) => {
-    switch(type) {
-        case "limited":
-            el.innerText = "This piece is getting minimal updates."
-            break;
-    }
 }
