@@ -69,7 +69,7 @@ nav.navbar .right ul {
     background-color: white;
     flex-direction: column;
     padding: 25px;
-    transform: translateX(-200vh);
+    transform: translateX(calc(-100vw - 50px));
     transition: .2s;
 }
 
