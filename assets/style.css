@@ -108,7 +108,7 @@ nav.navbar .right i {
 
 .page.split {
     transition: .5s;
-    background: url('./assets/images/background.jpg');
+    background: url('./images/background.jpg');
     background-size: 100vw 100vh;
     /* background-attachment: fixed; */
 
@@ -258,7 +258,7 @@ p.small {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(76, 96, 143) url('assets/images/quote2.svg');
+    background: rgb(76, 96, 143) url('./images/quote2.svg');
     background-attachment: fixed;
     background-size: 200px;
     color: white;
@@ -286,7 +286,7 @@ section#portfolio {
 }
 
 section#work {
-    background: url('./assets/images/background.jpg');
+    background: url('./images/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 
