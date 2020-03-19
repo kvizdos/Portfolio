@@ -12,6 +12,7 @@
 
 #postsContainer .card img {
     width: 100%;
+    background-color: white;
 }
 
 #postsContainer .card .card-body {
