@@ -29,7 +29,8 @@ header#post {
     width: 75%;
 }
 
-.post-content p {
+.post-content p,
+.post-content li {
     line-height: normal;
     font-size: 1.1em;
     margin-bottom: 10px;
@@ -242,7 +243,8 @@ pre::-webkit-scrollbar-thumb:hover {
     
     
 
-    .post-content p {
+    .post-content p,
+    .post-content li { 
         line-height: normal;
         font-size: 1.5em;
     }
