@@ -25,16 +25,17 @@ header#post {
 
 
 .post-content {
+    overflow-wrap: break-word;
     width: 75%;
 }
 
 .post-content p {
     line-height: normal;
-    font-size: 1.5em;
+    font-size: 1.1em;
 }
 
 .post-content h2 {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .post-content a {
@@ -237,5 +238,15 @@ pre::-webkit-scrollbar-thumb:hover {
         width: 50%;
     }
     
+    
+
+    .post-content p {
+        line-height: normal;
+        font-size: 1.5em;
+    }
+
+    .post-content h2 {
+        font-size: 1.8em;
+    }
     
 }
