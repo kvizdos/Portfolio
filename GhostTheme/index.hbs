@@ -1,0 +1,18 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- The main content area --}}
+{{!-- <main id="site-main"> --}}
+    {{> latestheader}}
+
+    {{> navbar type=" sticky" }}
+
+    <div id="content" class="container center">
+        <div id="postsContainer">
+            {{#foreach posts}}
+                {{> post}}
+            {{/foreach}}
+        </div>
+    </div>
+{{!-- </main> --}}

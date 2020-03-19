@@ -1,0 +1,52 @@
+<nav class="main{{type}}">
+    <ul id="desktop">
+        <article class="left">
+            <li id="blogName"><a href="/">Kenton Vizdos <strong>Blog</strong></a></li>
+            <li class="dropdown">
+                Categories
+                <ul>
+                    {{#get "tags" limit="all"}}
+                        {{#foreach tags visibility="all"}}
+                            <li><a href="{{url}}">{{name}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                </ul>
+            </li>
+        </article>
+        <article class="right">
+            <li><a href="https://kentonvizdos.com">Portfolio <i class="fas fa-external-link-alt"></i></a></li>
+        </article>
+    </ul>
+
+    <ul id="mobile">
+        <article class="left">
+            <li id="blogName"><a href="/">Kenton Vizdos <strong>Blog</strong></a></li>
+        </article>
+        <article class="right">
+            <li><i class="fas fa-bars" onclick="openNav()"></i></li>
+            
+            <ul class="navigator css-transitions-only-after-page-load">
+                <article>
+                    <i class="close fas fa-times" onclick="closeNav()"></i>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="https://kentonvizdos.com">Portfolio <i class="fas fa-external-link-alt"></i></a></li>
+                </article>
+                <article>
+                    <li class="title">Categories</li>
+                    {{#get "tags" limit="all"}}
+                        {{#foreach tags visibility="all"}}
+                            <li><a href="{{url}}">{{name}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                    
+                </article>
+            </ul>
+        </article>
+    </ul>
+</nav>
+
+{{#if type}}
+    <span class="stickyContentBack show"></span>
+    {{else}}
+    <span class="stickyContentBack noshow"></span>
+{{/if}}

@@ -1,0 +1,46 @@
+{{!< default}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+
+{{> navbar type=" sticky"}}
+
+<section class="container center">
+
+
+        <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+            {{#if feature_image}}
+            <figure class="post-full-image">
+                {{!-- This is a responsive image, it loads different sizes depending on device --}}
+                <img srcset="{{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 600w,
+                            {{img_url feature_image size="l"}} 1000w,
+                            {{img_url feature_image size="xl"}} 2000w" sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px" src="{{img_url feature_image size="xl"}}" alt="{{title}}" />
+            </figure>
+            {{/if}}
+
+            <header id="post">
+                <span></span>
+                <h1 class="text-center" id="title">{{title}}</h1>
+                <span></span>
+            </header>
+            <section class="post-outter">
+
+                <section>
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+                    {{#primary_tag}}
+                        <span>/</span> <a href="{{url}}">{{name}}</a>
+                    {{/primary_tag}}
+                </section>
+
+                <div class="post-content">
+                    {{content}}
+                </div>
+            </section>
+
+        </article>
+
+</section>
+{{/post}}

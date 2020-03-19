@@ -1,0 +1,7 @@
+footer {
+    background: rgb(76, 96, 143) url('../images/footerbg.svg');
+    background-attachment: fixed;
+    background-size: 200px;
+    color: white;
+    padding: 50px;
+}

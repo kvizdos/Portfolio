@@ -1,0 +1,10 @@
+{{#get "posts" limit="1" }}
+    {{#foreach posts}}
+        <header id="home" style="background-image: url('{{feature_image}}')">
+            <h3>Read my latest post:</h3>
+            <h2 class="title"><a href="{{url}}">{{ title }}</a></h2>
+            <p>{{excerpt words="33"}}</p>
+            <h4>{{ date published_at }}</h4>
+        </header>
+    {{/foreach}}
+{{/get}}

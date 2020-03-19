@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>{{meta_title}}</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/f40d5f26b8.js" crossorigin="anonymous"></script>
+    <script src="{{assets}}/assets/js/nav.js"></script>
+
+    <link rel="stylesheet" href="{{assets}}/assets/css/global.css">
+    <link rel="stylesheet" href="{{assets}}/assets/css/style.css">
+    <link rel="stylesheet" href="{{assets}}/assets/css/posts.css">
+    <link rel="stylesheet" href="{{assets}}/assets/css/navbar.css">
+    <link rel="stylesheet" href="{{assets}}/assets/css/post.css">
+    <link rel="stylesheet" href="{{assets}}/assets/css/tag.css">
+    <link rel="stylesheet" href="{{assets}}/assets/css/footer.css">
+
+    {{ghost_head}}
+
+</head>
+
+<body class="{{body_class}}">
+    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    {{{body}}}
+   
+    <footer>
+        &copy; {{date format="YYYY"}} {{@site.title}}
+    </footer>
+    {{ghost_foot}}
+
+    <script>
+        document.querySelectorAll(".css-transitions-only-after-page-load").forEach(el => el.classList.remove("css-transitions-only-after-page-load"));
+    </script>
+</body>
+
+</html>
