@@ -1,3 +1,4 @@
+<!-- TODO: Add CTF backend + integrate CTA into blog -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +16,7 @@
 
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/modal.css">
+    <link rel="stylesheet" href="assets/cta.css">
 
     <script src="assets/modal.js"></script>
     <script src="assets/portfolio.js"></script>
@@ -78,6 +80,8 @@
                 <li><a onclick="closeNav()" href="#portfolio">Portfolio</a></li>
                 <li><a onclick="closeNav()" href="#work">Work Experience</a></li>
                 <li><a href="https://blog.kentonvizdos.com">Blog <i class="fas fa-external-link-alt" style="padding-left: 10px;"></i></a></li>
+                <!-- <a onclick="closeNav()" href="#contact"><li class="contact">Contact</li></a> -->
+                <li class="contact"><a onclick="closeNav()" href="#contact">Contact</a></li>
             </ul>
 
             <i class="close fas fa-bars" onclick="openNav()"></i>
@@ -127,8 +131,15 @@
 
         <section class="page" id="contact">
             <section class="container">
-                <h2>Want to get in touch?</h2>
-                <p>Shoot me an email at me@kentonvizdos.com, I'd love to chat! If you're interested, I'm open for some freelance/contract work too, just let me know.</p>
+                <h2>Let's chat.</h2>
+                <p>If you're looking for a web developer, let's chat and see if I'm right for you.</p>
+                <form id="cta">
+                    <input type="text" id="name" placeholder="Your name..">
+                    <input type="email" id="email" placeholder="Your email..">
+                    <input type="text" id="company" placeholder="Your company..">
+                    <input type="text" id="whatYouWant" placeholder="Your need..">
+                    <input type="submit" value="Contact">
+                </form>
             </section>
         </section>
 
@@ -143,9 +154,7 @@
     <section id="modal">
         <article id="modalContent">
             <i class="fas fa-times" onclick="closeModal()"></i>
-            <article id="content">
-                <h1>Hello</h1>
-            </article>
+            <article id="content"></article>
         </article>
         <article id="modalCloser" class="modalSide" onclick="closeModal()"></article>
 

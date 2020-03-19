@@ -84,21 +84,36 @@ nav.navbar .right ul.show {
     transform: translateX(0);
 }
 
-nav.navbar ul li {
-    margin: 15px;
+nav.navbar ul li a {
+    display:inline-block;
+    padding: 10px;
 }
 
-nav.navbar ul li a {
+nav.navbar ul li.contact {
+    width: calc(100% - 60px);
+    background-color: #28d228;
+    margin: 0;
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+}
+
+nav.navbar ul li.contact a {
+    width: calc(100% - 20px);
+}
+
+nav.navbar ul a {
     color: inherit;
     text-decoration: none;
 }
 
-nav.navbar ul li a.active {
+nav.navbar ul a.active {
     font-weight: bold;
 }
 
 nav.navbar .right i.close {
-    margin: 45px;
+    margin: 25px;
     display: block;
 }
 
@@ -445,7 +460,14 @@ ul li:not(.active) {
     }
 
     nav.navbar ul li {
-        margin: 45px;
+        margin: 25px;
+    }
+
+    nav.navbar ul li.contact {
+        margin: auto;
+        margin-right: 15px;
+        margin-left: 25px;
+        width: fit-content;
     }
 
     #quote i {
