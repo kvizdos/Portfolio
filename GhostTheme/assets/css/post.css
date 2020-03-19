@@ -28,6 +28,10 @@ header#post {
     width: 75%;
 }
 
+.post-content a {
+    color: #2a6fec !important;
+}
+
 .postContainer {
     padding: 0 !important;
 }
