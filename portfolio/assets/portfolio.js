@@ -58,7 +58,8 @@ const portfolioItems = [
         name: "Yoga Your Way",
         short: "yyw",
         description: "Yoga Your Way was created for a quarter-long school project. This is it's second iteration, and is much better than v1. Overall, Yoga Your Way allows users to customize and create yoga routines with hundreds of premade poses. It is a PWA.",
-        type: "mobile"
+        type: "mobile",
+        github: "https://github.com/kvizdos/Yoga-Your-Way"
     },
     {
         name: "Auxy",
