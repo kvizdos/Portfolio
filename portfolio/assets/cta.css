@@ -2,6 +2,7 @@ form#cta input {
     font-size: 1.25em;
     margin-right: 15px;
     margin-top: 15px;
+    margin-bottom: 15px;
     padding: 10px;
     border-radius: 8px;
     border: 2px solid #5151ff;
@@ -13,6 +14,34 @@ form#cta input[type="submit"] {
     background-color: #5151ff;
     color: white;
     cursor: pointer;
+}
+
+form#cta input[type="submit"]:disabled {
+    background-color: #8686f8;
+    border: 2px solid #6f6ff6;
+    color: white;
+    cursor: unset;
+}
+
+form#cta.bad input:placeholder-shown:not([type="submit"]):not(#company) {
+    border: 2px solid #fa1616;
+}
+
+form#cta p.bad,
+form#cta p.good {
+    display: none;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+form#cta.good p.good {
+    color: rgb(33, 204, 33); 
+    display: block;
+}
+
+form#cta.bad p.bad {
+    display: block;
+    color: #fa1616;
 }
 
 @media (min-width: 915px) {
