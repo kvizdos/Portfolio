@@ -30,15 +30,12 @@
                     <i class="close fas fa-times" onclick="closeNav()"></i>
                     <li><a href="/">Home</a></li>
                     <li><a href="https://kentonvizdos.com">Portfolio <i class="fas fa-external-link-alt"></i></a></li>
-                </article>
-                <article>
                     <li class="title">Categories</li>
                     {{#get "tags" limit="all"}}
                         {{#foreach tags visibility="all"}}
                             <li><a href="{{url}}">{{name}}</a></li>
                         {{/foreach}}
                     {{/get}}
-                    
                 </article>
             </ul>
         </article>

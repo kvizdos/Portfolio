@@ -6,8 +6,6 @@
 {{> navbar type=" sticky"}}
 
 <section class="container center">
-
-
         <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
             {{#if feature_image}}
             <figure class="post-full-image">
@@ -22,24 +20,34 @@
             {{/if}}
 
             <header id="post">
-                <span></span>
                 <h1 class="text-center" id="title">{{title}}</h1>
-                <span></span>
             </header>
             <section class="post-outter">
-
                 <section>
-                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
-                    {{#primary_tag}}
-                        <span>/</span> <a href="{{url}}">{{name}}</a>
-                    {{/primary_tag}}
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD YYYY"}}</time>
                 </section>
-
+                {{#primary_tag}}
+                    <a class="tag" href="{{url}}">{{name}}</a>
+                {{/primary_tag}}
                 <div class="post-content">
                     {{content}}
                 </div>
             </section>
-
+            <article class="postauthor">
+                <article class="about">
+                    <img src="{{primary_author.profile_image}}">
+                    <article class="info">
+                        <article>
+                            <p class="name">{{primary_author.name}}</p>
+                            <p class="bio">{{primary_author.bio}}</p>
+                        </article>
+                        <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" class="twitter"><i class="fab fa-twitter"></i> {{primary_author.twitter}}</a>
+                    </article>
+                </article>
+                <article class="support">
+                    <a href="https://paypal.me/kentonv" target="_blank" alt="Support"><i class="fas fa-donate"></i></a>
+                </article>
+            </article>
         </article>
 
 </section>
