@@ -91,6 +91,7 @@ const portfolioItems = [
         name: "Chef",
         description: "This is a quick concept design for a theoretical company. I made it for a school project, so most buttons don't work, but I like to show it here because I feel like I did a good job on the design. If you would like to see more screenshots, please visit the GitHub and click into the 'screenshots' folder. It contains all sorts of screenshots (including one to show mobile responsiveness).",
         github: "https://github.com/kvizdos/SmallerProjects/tree/master/Chef",
+        live: "https://site-projects.home.kentonvizdos.com/Chef/",
         status: "Concept",
         type: "web"
     },
@@ -98,6 +99,7 @@ const portfolioItems = [
         name: "The Haunt",
         description: "The Haunt is another theoretical company and was made for a school project that had a theme of halloween. I am proud of this project because it is the first project I really used grids heavily on, and also it is the first page I managed to do a moving background (if you download the code, look at the balloon!) using SVGs. If you would like to see more screenshots, please visit the GitHub and click into the 'screenshots' folder. It contains all sorts of screenshots (including one to show mobile responsiveness).",
         github: "https://github.com/kvizdos/SmallerProjects/tree/master/The%20Haunt",
+        live: "https://site-projects.home.kentonvizdos.com/The%20Haunt/",
         status: "Concept",
         type: "web"
     }
