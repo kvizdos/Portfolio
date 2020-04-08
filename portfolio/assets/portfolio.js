@@ -63,8 +63,9 @@ const portfolioItems = [
     },
     {
         name: "Auxy",
-        description: "HOME Router allows for easy proxying of anything and allows you to put a strong authentication system in front of any page (note: NOT for production security, this is mainly for securing development environments). The great part about this reverse proxy is that you do not need to port forward every single application, with this you just open one port (by default, 80) and we'll take care of the rest.",
+        description: "HOME Router allows for easy proxying of anything and allows you to put a strong authentication system in front of any page (note: NOT for production security, this is mainly for securing development environments). The great part about this reverse proxy is that you do not need to port forward every single application, with this you just open one port (by default, 80) and we'll take care of the rest. Below, the visit button takes you to Auxy's home page and the GitHub brings you to the Auxy GitHub page, but not the home page GitHub, which is located at http://github.com/kvizdos/auxy-homepage/",
         github: "https://github.com/kvizdos/HOME-Router",
+        live: "https://auxy.kentonvizdos.com",
         type: "web"
     },
     {
