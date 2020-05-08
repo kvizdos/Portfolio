@@ -290,7 +290,33 @@ pre::-webkit-scrollbar-thumb:hover {
     background: #558acf;
 }
 
+#clapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#clapper p {
+    margin: 0;
+}
+
 @media (min-width: 915px) {
+    #clapper {
+        flex-direction: row;
+        text-align: left;
+        align-items: unset;
+    }
+
+    #clapper article {
+        padding-left: 15px;
+    }
+
+    #clapper h2 {
+        margin: 0;
+    }
+
     .post-full .post-full-image img {
         width: 65vw;
     }

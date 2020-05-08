@@ -62,9 +62,10 @@ const portfolioItems = [
         github: "https://github.com/kvizdos/Yoga-Your-Way"
     },
     {
-        name: "Auxy",
-        description: "Auxy allows for easy proxying of anything and allows you to put a strong authentication system in front of any page (note: NOT for production security, this is mainly for securing development environments). The great part about this reverse proxy is that you do not need to port forward every single application, with this you just open one port (by default, 80) and we'll take care of the rest.",
-        github: "https://github.com/kvizdos/HOME-Router",
+        name: "Prauxy",
+        description: "Prauxy allows for easy proxying of anything and allows you to put a strong authentication system in front of any page (note: NOT for production security, this is mainly for securing development environments). The great part about this reverse proxy is that you do not need to port forward every single application, with this you just open one port (by default, 80) and we'll take care of the rest. Below, the visit button takes you to Prauxy's home page and the GitHub brings you to the Prauxy GitHub page, but not the home page GitHub, which is located at http://github.com/kvizdos/Prauxy-homepage/",
+        github: "https://github.com/kvizdos/PRAUXY",
+        live: "https://prauxy.app",
         type: "web"
     },
     {
@@ -91,6 +92,7 @@ const portfolioItems = [
         name: "Chef",
         description: "This is a quick concept design for a theoretical company. I made it for a school project, so most buttons don't work, but I like to show it here because I feel like I did a good job on the design. If you would like to see more screenshots, please visit the GitHub and click into the 'screenshots' folder. It contains all sorts of screenshots (including one to show mobile responsiveness).",
         github: "https://github.com/kvizdos/SmallerProjects/tree/master/Chef",
+        live: "https://site-projects.home.kentonvizdos.com/Chef/",
         status: "Concept",
         type: "web"
     },
@@ -98,6 +100,7 @@ const portfolioItems = [
         name: "The Haunt",
         description: "The Haunt is another theoretical company and was made for a school project that had a theme of halloween. I am proud of this project because it is the first project I really used grids heavily on, and also it is the first page I managed to do a moving background (if you download the code, look at the balloon!) using SVGs. If you would like to see more screenshots, please visit the GitHub and click into the 'screenshots' folder. It contains all sorts of screenshots (including one to show mobile responsiveness).",
         github: "https://github.com/kvizdos/SmallerProjects/tree/master/The%20Haunt",
+        live: "https://site-projects.home.kentonvizdos.com/The%20Haunt/",
         status: "Concept",
         type: "web"
     }
