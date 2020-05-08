@@ -3,6 +3,9 @@
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
+<script src="https://unpkg.com/applause-button/dist/applause-button.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/applause-button/dist/applause-button.css">
+
 {{> navbar type=" sticky"}}
 
 <section class="container center">
@@ -32,6 +35,13 @@
                 <div class="post-content">
                     {{content}}
                 </div>
+            </section>
+            <section id="clapper">
+                <applause-button style="width: 58px; height: 58px" color="#3f9dff"></applause-button>
+                <article>
+                    <h2>Enjoy the article?</h2>
+                    <p>a clap is much appreciated if you enjoyed. No sign up or cost associated :)</p>
+                </article>
             </section>
             <article class="postauthor">
                 <article class="about">
