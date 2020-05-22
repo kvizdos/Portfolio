@@ -219,7 +219,7 @@ nav.navbar .right i.close {
 .item {
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 100%;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 5px 8px #00000030;
@@ -562,7 +562,7 @@ ul li:not(.active) {
     }
     .grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 10% 10% 10%;
         grid-gap: 25px;
     }
     
