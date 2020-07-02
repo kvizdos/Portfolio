@@ -97,6 +97,11 @@ header#post {
     padding: 0 !important;
 }
 
+.kg-card {
+    display: flex;
+    justify-content: center;
+}
+
 .kg-card-hascaption {
     display: flex;
     flex-direction: column;
