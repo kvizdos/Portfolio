@@ -128,8 +128,8 @@ header#post {
     margin-left: -50px;
 }
 
-.post-content .kg-width-full img {
-    width: 100%;
+.post-content .kg-image-card img {
+    min-width: 100%;
 }
 
 .post-content .kg-image-card {
