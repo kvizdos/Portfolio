@@ -360,6 +360,7 @@ pre::-webkit-scrollbar-thumb:hover {
     .post-content .kg-width-wide img {
         width: 100%;
         height: auto;
+        align-self: flex-start;
     }
 
     .post-content .kg-width-wide {
