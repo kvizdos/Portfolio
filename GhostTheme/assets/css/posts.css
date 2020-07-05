@@ -1,13 +1,13 @@
 #postsContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 25px;
     width: 75%;
 }
 
 #postsContainer .card {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
 }
 
 #postsContainer .card img {
@@ -23,8 +23,9 @@
     margin: 0;
 }
 
-@media (max-width: 915px) and (orientation: landscape) {
+@media (min-width: 915px) and (orientation: landscape) {
     #postsContainer {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        width: 75%;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
 }

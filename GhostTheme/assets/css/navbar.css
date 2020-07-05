@@ -10,7 +10,7 @@ nav.main {
     top: 0;
     z-index: 100;
     box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.253);
-    width: 100%;
+    width: 100vw;
     background-color: white;
     height: 65px;
     display: flex;

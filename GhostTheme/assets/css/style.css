@@ -91,10 +91,3 @@ header#home h2.title:hover {
         margin: 0;
     }
 }
-
-
-@media (max-width: 400px) {
-    .container {
-        padding: 0;
-    }
-}
