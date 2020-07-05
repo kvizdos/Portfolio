@@ -645,7 +645,7 @@ ul li:not(.active) {
         display: flex;
         flex-direction: column;
     }
-    .page:not(.full) {
+    .page:not(.full):not(#hero) {
       width: 50%;
       display: flex;
       align-self: center;
