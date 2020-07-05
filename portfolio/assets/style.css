@@ -146,10 +146,6 @@ nav.navbar .right i.close {
     background-color: white;
 }
 
-.page {
-    transition: .5s;
-}
-
 .page section.container {
     padding: calc(var(--content-padding) / 2);
 }
