@@ -20,6 +20,7 @@ header#post {
 }
 
 .post-full .post-full-image img {
+    height: auto;
     width: 100vw;
 }
 
@@ -119,6 +120,7 @@ header#post {
 .kg-gallery-image img {
     border-radius: 5px;
     margin-bottom: 10px;
+    height: auto;
 }
 
 .post-content .kg-width-full {
@@ -261,6 +263,7 @@ h1#title {
 }
 .kg-width-full img {
     border-radius: 0 !important;
+    height: auto;
 }
 
 a.tag {
@@ -338,6 +341,7 @@ pre::-webkit-scrollbar-thumb:hover {
 
     .post-full .post-full-image img {
         width: 65vw;
+        height:auto;
     }
 
     .post-content {
@@ -355,6 +359,7 @@ pre::-webkit-scrollbar-thumb:hover {
 
     .post-content .kg-width-wide img {
         width: 100%;
+        height: auto;
     }
 
     .post-content .kg-width-wide {
