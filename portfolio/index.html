@@ -41,6 +41,7 @@
         <section></section>
         <section>
             <article class="text-center">
+                <img class="headshot" src="./assets/images/headshot.jpg" />
                 <h1>Kenton Vizdos</h1>
                 <p>I'm a high school student in Richmond, VA studying full stack web development</p>
                 <article class="socialBtns">
@@ -72,7 +73,7 @@
             </ul>
         </section>
 
-        <i class="fas fa-chevron-down" id="downArrow" onclick="swipeFirstPage()"></i>
+        <a href="#page" id="goDown"><i class="fas fa-chevron-down" id="downArrow"></i></a>
     </section>
 
     
@@ -95,6 +96,9 @@
     <section id="page">
         <section class="page" id="about">
             <section class="container">
+                <figure>
+                    <img class="headshot" src="./assets/images/headshot.jpg" />
+                </figure>
                 <h2>About Me</h2>
                 <p>My name is Kenton Vizdos and I am a rising senior at Deep Run High School's Center for Information Technology (CIT). Over the last few years, you may have seen me around town at ScrumRVA, Agile Richmond, Innovate Virginia, or one of the many other amazing Richmond events. Through a lot of independent learning, I've managed to learn many advanced web development frameworks and techniques such as Angular, React, NodeJS, Bootstrap, and more. Also, I've become a Certified Scrum Master (CSM) and Certified Scrum Product Owner (CSPO) which have helped me immensely while creating all of my projects.</p>
             
@@ -104,7 +108,7 @@
                 </ul>
             </section>
         </section>
-        <section class="page" id="quote">
+        <section class="page full" id="quote">
             <i class="fas fa-quote-left"></i>
             <blockquote>
                 <p>Programs must be written for people to read, and only incidentally for machines to execute.</p>
@@ -116,6 +120,10 @@
         <section class="page" id="portfolio">
             <section class="container">
                 <h2>What have I made?</h2>
+                <section class="buttons">
+                    <a href="https://github.com/kvizdos/" target="_blank" class="btn github"><i class="fab fa-github-alt" aria-hidden="true"></i> GitHub</a>
+                </section>
+
                 <ul class="categorySelector">
                     <li onclick="portfolio(this, 'all')" class="active">all</li>
                     <li onclick="portfolio(this, 'web')">web</li>
@@ -125,7 +133,7 @@
             </section>
         </section>
 
-        <section class="page" id="work">
+        <section class="page full" id="work">
             <section class="container" id="companies">
                 <article class="workContainer"></article>    
             </section>

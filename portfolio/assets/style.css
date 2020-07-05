@@ -10,7 +10,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Noto Sans', sans-serif;
-
 }
 
 h1, h2, h3, p, ul {
@@ -51,6 +50,7 @@ h2 {
 
 nav.navbar {
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
     z-index: 10;
     width: calc(100% - 25px);
@@ -155,7 +155,7 @@ nav.navbar .right i.close {
 }
 
 .page section p {
-    font-size: 1.5em;
+    font-size: 1.25em;
 }
 
 .center {
@@ -175,6 +175,11 @@ nav.navbar .right i.close {
 #downArrow {
     font-size: 2em;
     cursor: pointer;
+}
+
+#goDown {
+    color: inherit;
+    text-decoration: none;
 }
 
 .text-center {
@@ -297,7 +302,7 @@ p.small {
 }
 
 #quote blockquote p {
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: white;
 }
 
@@ -311,6 +316,11 @@ section#portfolio {
     box-shadow: 0 0 20px #23257d;
 }
 
+section#portfolio .buttons:first-of-type {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 section#work {
     background: url('./images/background.jpg');
     background-size: cover;
@@ -322,6 +332,7 @@ section#work {
 section #work .workContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    width: 100%;
 }
 
 section #work .workContainer .companyBadge {
@@ -380,6 +391,7 @@ ul {
 }
 
 ul#certs {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
 }
@@ -449,7 +461,29 @@ ul li:not(.active) {
     box-shadow: 0 0 20px #23257d;
 }
 
+.page#about .container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.page#about figure {
+    margin: 25px;
+    align-self: center;
+}
+
+.page#about .headshot {
+    width: 100%;
+    border-radius: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    max-width: 300px;
+}
+
 @media (min-width: 915px) {
+    /* section #work .workContainer {
+        width: fit-content;
+    } */
     nav.navbar .right i.close {
         display: none;
     }
@@ -485,7 +519,7 @@ ul li:not(.active) {
     }
 
     #quote blockquote p {
-        font-size: 3em;
+        font-size: 2.25em;
         color: white;
     }
     
@@ -555,6 +589,11 @@ ul li:not(.active) {
         display: flex;
     }
 
+    #hero img.headshot {
+        width: 20%;
+        border-radius: 100%;
+    }
+
     .page section.container {
         padding: var(--content-padding);
     }
@@ -595,4 +634,25 @@ ul li:not(.active) {
     #hero section article {
         padding: 0;
     }    
-}  
+
+    .page#about .headshot {
+        display: none;
+    }
+} 
+
+@media screen and (min-width: 2048px) {
+    #page {
+        display: flex;
+        flex-direction: column;
+    }
+    .page:not(.full) {
+      width: 50%;
+      display: flex;
+      align-self: center;
+      box-shadow: unset !important;
+    }
+
+    #quote blockquote p {
+        font-size: 2em;
+    }
+}
