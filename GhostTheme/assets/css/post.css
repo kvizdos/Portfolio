@@ -130,6 +130,8 @@ header#post {
 
 .post-content .kg-image-card img {
     min-width: 100%;
+    height: auto;
+    align-self: flex-start;
 }
 
 .post-content .kg-image-card {
