@@ -10,11 +10,6 @@
     <script src="https://kit.fontawesome.com/f40d5f26b8.js" crossorigin="anonymous"></script>
     <script src="{{assets}}/assets/js/nav.js"></script>
 
-    {{#is "post"}}
-        <meta name="og:image" content="https://cdn.home.kentonvizdos.com/social-cards?title={{post.title}}&slug={{post.slug}}&author={{post.primary_author.name}}&time={{post.reading_time}}">
-        <meta name="twitter:image" content="https://cdn.home.kentonvizdos.com/social-cards?title={{post.title}}&slug={{post.slug}}&author={{post.primary_author.name}}&time={{post.reading_time}}">
-    {{/is}}
-
     <link rel="stylesheet" href="{{assets}}/assets/css/global.css">
     <link rel="stylesheet" href="{{assets}}/assets/css/style.css">
     <link rel="stylesheet" href="{{assets}}/assets/css/posts.css">
@@ -26,7 +21,10 @@
     {{ghost_head}}
     
     {{#is "post"}}
+        <meta name="og:image" content="https://cdn.home.kentonvizdos.com/social-cards?title={{post.title}}&slug={{post.slug}}&author={{post.primary_author.name}}&time={{post.reading_time}}">
+
         <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="https://cdn.home.kentonvizdos.com/social-cards?title={{post.title}}&slug={{post.slug}}&author={{post.primary_author.name}}&time={{post.reading_time}}">
     {{/is}}
 </head>
 
