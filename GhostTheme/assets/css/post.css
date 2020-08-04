@@ -20,7 +20,6 @@ header#post {
 }
 
 .post-full .post-full-image img {
-    height: auto;
     width: 100vw;
 }
 
@@ -120,7 +119,6 @@ header#post {
 .kg-gallery-image img {
     border-radius: 5px;
     margin-bottom: 10px;
-    height: auto;
 }
 
 .post-content .kg-width-full {
@@ -128,10 +126,8 @@ header#post {
     margin-left: -50px;
 }
 
-.post-content .kg-image-card img {
-    min-width: 100%;
-    height: auto;
-    align-self: flex-start;
+.post-content .kg-width-full img {
+    width: 100%;
 }
 
 .post-content .kg-image-card {
@@ -265,7 +261,6 @@ h1#title {
 }
 .kg-width-full img {
     border-radius: 0 !important;
-    height: auto;
 }
 
 a.tag {
@@ -283,9 +278,11 @@ pre {
     color: white;
     box-shadow: inset 0 0 4px black;
     overflow-x: scroll;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    width: 100%;
+    margin: 20px;
+}
+
+html[data-theme="dark"] pre {
+    filter: invert(1) hue-rotate(180deg);
 }
 
 /* width */
@@ -343,7 +340,6 @@ pre::-webkit-scrollbar-thumb:hover {
 
     .post-full .post-full-image img {
         width: 65vw;
-        height:auto;
     }
 
     .post-content {
@@ -361,8 +357,6 @@ pre::-webkit-scrollbar-thumb:hover {
 
     .post-content .kg-width-wide img {
         width: 100%;
-        height: auto;
-        align-self: flex-start;
     }
 
     .post-content .kg-width-wide {

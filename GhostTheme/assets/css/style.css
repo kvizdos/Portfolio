@@ -3,7 +3,19 @@
     -moz-transition: none !important;
     -ms-transition: none !important;
     -o-transition: none !important;
-  }
+}
+
+html[data-theme="dark"] {
+    filter: invert(1) hue-rotate(180deg);
+    -webkit-filter: invert(1) hue-rotate(180deg);
+}
+
+html[data-theme="dark"] img {
+    filter: invert(1) hue-rotate(180deg);
+    -webkit-filter: invert(1) hue-rotate(180deg);
+
+    opacity: .75
+}
 
 header#home {
     height: 50vh;

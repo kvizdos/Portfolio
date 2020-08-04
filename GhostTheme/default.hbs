@@ -9,7 +9,21 @@
 
     <script src="https://kit.fontawesome.com/f40d5f26b8.js" crossorigin="anonymous"></script>
     <script src="{{assets}}/assets/js/nav.js"></script>
+    <script>
+        function toggleDarkmode(forceDark = false, forceLight = false) {
+            const html = document.querySelector('html');
+            const togBtn = document.querySelector('#nightmodeToggle i')
 
+            const enableDarkmode = html.dataset.theme != undefined && html.dataset.theme == "light";
+
+            togBtn.classList.remove((enableDarkmode || forceDark) && !forceLight ? "far" : "fas");
+            togBtn.classList.add((enableDarkmode || forceDark) && !forceLight ? "fas" : "far");
+
+            html.dataset.theme = (enableDarkmode || forceDark) && !forceLight ? "dark" : "light";
+
+            localStorage.setItem("darkmode", (enableDarkmode || forceDark) && !forceLight);
+        }
+    </script>
     <link rel="stylesheet" href="{{assets}}/assets/css/global.css">
     <link rel="stylesheet" href="{{assets}}/assets/css/style.css">
     <link rel="stylesheet" href="{{assets}}/assets/css/posts.css">
@@ -39,6 +53,17 @@
 
     <script>
         document.querySelectorAll(".css-transitions-only-after-page-load").forEach(el => el.classList.remove("css-transitions-only-after-page-load"));
+        const enableDarkmode = (window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem("darkmode") == "true") && (localStorage.getItem("darkmode") != "false");
+
+        toggleDarkmode(enableDarkmode, !enableDarkmode)
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            const enableDarkmode2 = event.matches;
+
+            console.log(enableDarkmode2)
+
+            toggleDarkmode(enableDarkmode2, !enableDarkmode2)
+        })
     </script>
 </body>
 

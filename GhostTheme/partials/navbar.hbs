@@ -1,4 +1,17 @@
 <nav class="main{{type}}">
+    {{!-- <script>
+        function toggleDarkmode() {
+            const html = document.querySelector('html');
+            const togBtn = document.querySelector('#nightmodeToggle i')
+
+            const enableDarkmode = html.dataset.theme == undefined || html.dataset.theme == "light";
+
+            togBtn.classList.remove(enableDarkmode ? "far" : "fas");
+            togBtn.classList.add(enableDarkmode ? "fas" : "far");
+
+            html.dataset.theme = enableDarkmode ? "dark" : "light";
+        }
+    </script> --}}
     <ul id="desktop">
         <article class="left">
             <li id="blogName"><a href="/">Kenton Vizdos <strong>Blog</strong></a></li>
@@ -15,6 +28,7 @@
         </article>
         <article class="right">
             <li><a href="https://kentonvizdos.com">Portfolio <i class="fas fa-external-link-alt"></i></a></li>
+            <li id="nightmodeToggle" onclick="toggleDarkmode();"><i class="far fa-moon"></i></li>
         </article>
     </ul>
 
