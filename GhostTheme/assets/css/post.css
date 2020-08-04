@@ -138,6 +138,11 @@ header#post {
 .post-content .kg-image-card {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+}
+
+.post-content .kg-image-card img {
+    align-items: flex-start;
 }
 
 .kg-gallery-container {
