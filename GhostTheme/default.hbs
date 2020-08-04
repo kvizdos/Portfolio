@@ -12,12 +12,14 @@
     <script>
         function toggleDarkmode(forceDark = false, forceLight = false) {
             const html = document.querySelector('html');
-            const togBtn = document.querySelector('#nightmodeToggle i')
+            const togBtn = document.querySelectorAll('#nightmodeToggle i')
 
             const enableDarkmode = html.dataset.theme != undefined && html.dataset.theme == "light";
 
-            togBtn.classList.remove((enableDarkmode || forceDark) && !forceLight ? "far" : "fas");
-            togBtn.classList.add((enableDarkmode || forceDark) && !forceLight ? "fas" : "far");
+            togBtn[0].classList.remove((enableDarkmode || forceDark) && !forceLight ? "far" : "fas");
+            togBtn[0].classList.add((enableDarkmode || forceDark) && !forceLight ? "fas" : "far");
+            togBtn[1].classList.remove((enableDarkmode || forceDark) && !forceLight ? "far" : "fas");
+            togBtn[1].classList.add((enableDarkmode || forceDark) && !forceLight ? "fas" : "far");
 
             html.dataset.theme = (enableDarkmode || forceDark) && !forceLight ? "dark" : "light";
 
