@@ -101,6 +101,11 @@ header#post {
 .kg-card {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+}
+
+.kg-card img {
+    align-items: flex-start;
 }
 
 .kg-card-hascaption {
