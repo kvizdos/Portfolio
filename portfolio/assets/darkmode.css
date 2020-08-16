@@ -1,0 +1,41 @@
+:root[data-theme="dark"] {
+    --dividerBoxShadowColor: #ededed;
+}
+
+html[data-theme="dark"] {
+    filter: invert(1) hue-rotate(180deg);
+    -webkit-filter: invert(1) hue-rotate(180deg);
+}
+
+html[data-theme="dark"] body {
+    background-color: rgb(252, 252, 252);
+}
+
+html[data-theme="dark"] img {
+    filter: invert(1) hue-rotate(180deg);
+    -webkit-filter: invert(1) hue-rotate(180deg);
+
+    opacity: .85
+}
+
+html[data-theme="dark"] #quote {
+    background: black url('./images/quote2.svg');
+    background-size: 200px;
+    filter: invert(1) hue-rotate(155deg);
+    -webkit-filter: invert(1) hue-rotate(155deg);
+}
+
+html[data-theme="dark"] #quote i,
+html[data-theme="dark"] #quote blockquote p,
+html[data-theme="dark"] #quote blockquote footer {
+    color: white;
+}
+
+html[data-theme="dark"] .wrapper li img {
+    box-shadow: none;
+}
+
+html[data-theme="dark"] nav.navbar ul li.contact {
+    background-color: rgb(43 197 90);
+    color: black;
+}

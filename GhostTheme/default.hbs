@@ -10,6 +10,29 @@
     <script src="https://kit.fontawesome.com/f40d5f26b8.js" crossorigin="anonymous"></script>
     <script src="{{assets}}/assets/js/nav.js"></script>
     <script>
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;domain=.kentonvizdos.com";
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
         function toggleDarkmode(forceDark = false, forceLight = false) {
             const html = document.querySelector('html');
             const togBtn = document.querySelectorAll('#nightmodeToggle i')
@@ -23,7 +46,7 @@
 
             html.dataset.theme = (enableDarkmode || forceDark) && !forceLight ? "dark" : "light";
 
-            localStorage.setItem("darkmode", (enableDarkmode || forceDark) && !forceLight);
+            setCookie("darkmode", (enableDarkmode || forceDark) && !forceLight);
         }
     </script>
     <link rel="stylesheet" href="{{assets}}/assets/css/global.css">
@@ -55,7 +78,7 @@
 
     <script>
         document.querySelectorAll(".css-transitions-only-after-page-load").forEach(el => el.classList.remove("css-transitions-only-after-page-load"));
-        const enableDarkmode = (window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem("darkmode") == "true") && (localStorage.getItem("darkmode") != "false");
+        const enableDarkmode = (window.matchMedia('(prefers-color-scheme: dark)').matches || getCookie("darkmode") == "true") && (getCookie("darkmode") != "false");
 
         toggleDarkmode(enableDarkmode, !enableDarkmode)
 

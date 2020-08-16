@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/modal.css">
     <link rel="stylesheet" href="assets/cta.css">
+    <link rel="stylesheet" href="assets/darkmode.css">
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/js-base64@2.5.2/base64.min.js"></script>
@@ -38,6 +39,46 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47286500-7"></script>
+
+    <script>
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;domain=.kentonvizdos.com";
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function toggleDarkmode(forceDark = false, forceLight = false) {
+            const html = document.querySelector('html');
+            const togBtn = document.querySelectorAll('#nightmodeToggle i')
+            const togBtn2 = document.querySelectorAll('i#nightmodeToggle')
+            
+            const enableDarkmode = html.dataset.theme != undefined && html.dataset.theme == "light";
+            togBtn[0].classList.remove((enableDarkmode || forceDark) && !forceLight ? "far" : "fas");
+            togBtn[0].classList.add((enableDarkmode || forceDark) && !forceLight ? "fas" : "far");
+            togBtn2[0].classList.remove((enableDarkmode || forceDark) && !forceLight ? "far" : "fas");
+            togBtn2[0].classList.add((enableDarkmode || forceDark) && !forceLight ? "fas" : "far");
+            html.dataset.theme = (enableDarkmode || forceDark) && !forceLight ? "dark" : "light";
+            setCookie("darkmode", (enableDarkmode || forceDark) && !forceLight, 3652);
+        }
+    </script>
+
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -60,23 +101,6 @@
                 </article>
             </article>
 
-            <!-- <p class="text-center small">Read my latest blog post:</p>
-
-            <section class="grid 3x1">
-                <article class="item">
-                    <img src="./assets/images/placeholder.jpg">
-                    <a href="#">safihdfsegidof gdiofhgo dfhgoidfghj oidgjidfgj oidfgjiodfg joidfgjoifdg odigjoidfg oidfg oidfghj oidfjgoidfjgiodfj iowregjoirh giubnwe f</a>
-                </article>
-                <article class="item">
-                    <img src="./assets/images/placeholder.jpg">
-                    <a href="#">safihdfsegidof gdiofhgo dfhgoidfghj oidgjidfgj oidfgjiodfg j</a>
-                </article>
-                <article class="item">
-                    <img src="./assets/images/placeholder.jpg">
-                    <a href="#">safihdfsegidof gdiofhgo dfhgoidfghj oidgjidfgj g oidfg oidfghj oidfjgoidfjgiodfj iowregjoirh giubnwe f</a>
-                </article>
-            </section> -->
-
             <ul id="whoIveWorkedFor" class="flatList">
                 <li><a href="#work"><img src="./assets/images/cos/singlestone.png"></a></li>
                 <li><a href="#work"><img src="./assets/images/cos/metactf.png"></a></li>
@@ -95,10 +119,13 @@
                 <li><a onclick="closeNav()" href="#portfolio">Portfolio</a></li>
                 <li><a onclick="closeNav()" href="#work">Work Experience</a></li>
                 <li><a href="https://blog.kentonvizdos.com">Blog <i class="fas fa-external-link-alt" style="padding-left: 10px;"></i></a></li>
-                <!-- <a onclick="closeNav()" href="#contact"><li class="contact">Contact</li></a> -->
+
+                <li id="nightmodeToggle" onclick="toggleDarkmode();" class="hideOnMobile"><i class="far fa-moon"></i></li>
+                
                 <li class="contact"><a onclick="closeNav()" href="#contact">Contact</a></li>
             </ul>
 
+            <i class="far fa-moon hideOnDesktop" id="nightmodeToggle" onclick="toggleDarkmode();"></i>        
             <i class="close fas fa-bars" onclick="openNav()"></i>
         </article>
     </nav>
@@ -189,7 +216,17 @@
     </section>
 
     <script>
-        document.querySelector('#hero').style.height = `calc(100vh - ${document.querySelector('#prauxy-branding-banner').offsetHeight}px)`
+        if(document.querySelector('#prauxy-branding-banner')) document.querySelector('#hero').style.height = `calc(100vh - ${document.querySelector('#prauxy-branding-banner').offsetHeight}px)`
+        const enableDarkmode = (window.matchMedia('(prefers-color-scheme: dark)').matches || getCookie("darkmode") == "true") && (getCookie("darkmode") != "false");
+
+        console.log("Enable: " + enableDarkmode)
+
+        toggleDarkmode(enableDarkmode, !enableDarkmode)
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            const enableDarkmode2 = event.matches;
+            console.log(enableDarkmode2)
+            toggleDarkmode(enableDarkmode2, !enableDarkmode2)
+        })
     </script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 :root {
     --content-padding: 60px;
+    --dividerBoxShadowColor: #e5e5e5;
 }
 
 html {
@@ -10,6 +11,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Noto Sans', sans-serif;
+    background-color: white;
 }
 
 h1, h2, h3, p, ul {
@@ -23,6 +25,14 @@ p {
 
 h2 {
     margin-bottom: 15px;
+}
+
+.hideOnDesktop {
+    display: inherit;
+}
+
+.hideOnMobile {
+    display: none;
 }
 
 .page.noNav {
@@ -52,9 +62,9 @@ nav.navbar {
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-    z-index: 10;
+    z-index: 100;
     width: calc(100% - 25px);
-    box-shadow: 0 5px 8px -2px #00000030;
+    box-shadow: 0 5px 8px -2px var(--dividerBoxShadowColor);
     height: 65px;
     background-color: white;
     display: flex;
@@ -69,6 +79,11 @@ nav.navbar p {
 nav.navbar * {
     padding: 0;
     margin: 0;
+}
+
+nav.navbar .right {
+    display: flex;
+    align-items: center;
 }
 
 nav.navbar .right ul {
@@ -227,7 +242,7 @@ nav.navbar .right i.close {
     width: 100%;
     border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 5px 8px #00000030;
+    box-shadow: 0 5px 8px var(--dividerBoxShadowColor);
 }
 
 .item img {
@@ -259,7 +274,7 @@ p.small {
 }
 
 .companyBadge {
-    box-shadow: 0 3px 10px #00000030;
+    box-shadow: 0 3px 10px rgb(65, 76, 107);
     border-radius: 10px;
     width: fit-content;
     padding: 10px;
@@ -268,6 +283,7 @@ p.small {
     justify-content: center;
     align-items: center;
     background-color: white;
+    cursor: pointer;
 }
 
 .companyBadge a {
@@ -309,7 +325,7 @@ p.small {
 
 section#portfolio {
     position: relative;
-    box-shadow: 0 0 20px #23257d;
+    box-shadow: 0 0 20px var(--dividerBoxShadowColor);
 }
 
 section#portfolio .buttons:first-of-type {
@@ -435,7 +451,7 @@ ul li:not(.active) {
    object-fit: cover;
    width: 100%;
    height: 100%;
-   box-shadow: 0 5px 8px #00000030;
+   box-shadow: 0 5px 8px var(--dividerBoxShadowColor);
    border-radius: 15px;
    transition: .2s;
    overflow: hidden;
@@ -454,7 +470,8 @@ ul li:not(.active) {
 
 .page#about {
     position: relative;
-    box-shadow: 0 0 20px #23257d;
+    box-shadow: 0 0 20px var(--dividerBoxShadowColor);
+    z-index: 10;
 }
 
 .page#about .container {
@@ -479,7 +496,15 @@ ul li:not(.active) {
 @media (min-width: 915px) {
     /* section #work .workContainer {
         width: fit-content;
-    } */
+    } */    
+    .hideOnDesktop {
+        display: none;
+    }
+
+    .hideOnMobile {
+        display: inherit;
+    }
+
     nav.navbar .right i.close {
         display: none;
     }
@@ -494,6 +519,8 @@ ul li:not(.active) {
     }
 
     nav.navbar ul li {
+        display: flex;
+        align-items: center;
         margin: 25px;
     }
 
