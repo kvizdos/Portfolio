@@ -219,14 +219,14 @@
         if(document.querySelector('#prauxy-branding-banner')) document.querySelector('#hero').style.height = `calc(100vh - ${document.querySelector('#prauxy-branding-banner').offsetHeight}px)`
         const enableDarkmode = (window.matchMedia('(prefers-color-scheme: dark)').matches || getCookie("darkmode") == "true") && (getCookie("darkmode") != "false");
 
-        console.log("Enable: " + enableDarkmode)
-
-        toggleDarkmode(enableDarkmode, !enableDarkmode)
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-            const enableDarkmode2 = event.matches;
-            console.log(enableDarkmode2)
-            toggleDarkmode(enableDarkmode2, !enableDarkmode2)
-        })
+        if(window.location.href.indexOf("file:///") == -1) {
+            toggleDarkmode(enableDarkmode, !enableDarkmode)
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+                const enableDarkmode2 = event.matches;
+                console.log(enableDarkmode2)
+                toggleDarkmode(enableDarkmode2, !enableDarkmode2)
+            })
+        }
     </script>
 </body>
 </html>

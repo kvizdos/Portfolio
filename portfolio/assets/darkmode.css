@@ -19,7 +19,7 @@ html[data-theme="dark"] img {
 }
 
 html[data-theme="dark"] #quote {
-    background: black url('./images/quote2.svg');
+    background: rgb(34, 34, 34) url('./images/quote2.svg');
     background-size: 200px;
     filter: invert(1) hue-rotate(155deg);
     -webkit-filter: invert(1) hue-rotate(155deg);

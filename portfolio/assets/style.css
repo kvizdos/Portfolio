@@ -1,6 +1,8 @@
 :root {
     --content-padding: 60px;
     --dividerBoxShadowColor: #e5e5e5;
+    --headerTextOffsetX: 4px;
+    --headerTextOffsetY: 4px;
 }
 
 html {
@@ -205,6 +207,53 @@ nav.navbar .right i.close {
     font-size: 3em;
     padding: 0;
     margin: 0;
+    position: relative;
+    z-index: 10;
+    color: rgb(52, 179, 253);
+}
+
+#hero section h1::before {
+    content: "Kenton Vizdos";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    color: rgb(0, 153, 255);
+    animation-name: moveHeaderTextBefore;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#hero section h1::after {
+    content: "Kenton Vizdos";
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    top: 0;
+    left: 0;
+    animation-name: moveHeaderTextAfter;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes moveHeaderTextBefore {
+    from {
+        transform: translate(-3px, 3px);
+    }
+    to {
+        transform: translate(-6px, 6px)
+    }
+}
+
+@keyframes moveHeaderTextAfter {
+    from {
+        transform: translate(3px, -3px);
+    }
+    to {
+        transform: translate(6px, -6px)
+    }
 }
 
 #hero section p {
@@ -213,10 +262,18 @@ nav.navbar .right i.close {
 
 #hero section article {
     padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#hero section article.socialBtns {
+    flex-direction: row;
 }
 
 #hero section article p {
     font-size: 1.5em;
+    color: white;
 }
 
 #whoIveWorkedFor {
@@ -229,6 +286,10 @@ nav.navbar .right i.close {
 
 #whoIveWorkedFor li {
     margin: 15px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0px #c7c7c7;
 }
 
 .grid {
@@ -610,11 +671,15 @@ ul li:not(.active) {
 
     #hero {
         display: flex;
+        background: rgb(0,228,255);
+        background: linear-gradient(45deg, rgba(0,228,255,1) 0%, rgba(0,108,255,1) 100%);
+        color: white;
+        height: calc(100vh - 65px);
     }
 
     #hero img.headshot {
         width: 20%;
-        border-radius: 100%;
+        border-radius: 25%;
     }
 
     .page section.container {
