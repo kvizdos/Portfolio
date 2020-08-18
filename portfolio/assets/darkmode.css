@@ -39,3 +39,19 @@ html[data-theme="dark"] nav.navbar ul li.contact {
     background-color: rgb(43 197 90);
     color: black;
 }
+
+html[data-theme="dark"] #hero {
+    color: black !important;
+}
+
+html[data-theme="dark"] #hero section h1::after {
+    color: black;
+}
+
+html[data-theme="dark"] #hero section h1 {
+    color: rgb(34 100 132);
+}
+
+html[data-theme="dark"] #hero section article p {
+    color: black;
+}
