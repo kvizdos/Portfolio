@@ -8,6 +8,7 @@
 #postsContainer .card {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
+    overflow: hidden;
 }
 
 #postsContainer .card img {
@@ -16,6 +17,11 @@
 
 #postsContainer .card .card-body {
     padding: 25px;
+    height: 100%;
+}
+
+html[data-theme="dark"] #postsContainer .card .card-body {
+    background-color: #eeeeee;
 }
 
 #postsContainer .card .card-body h2 {
