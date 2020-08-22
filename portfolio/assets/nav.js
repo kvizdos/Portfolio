@@ -35,34 +35,36 @@ const swipeFirstPage = () => {
 }
 
 
-window.addEventListener('scroll', function() {
-    const spaceFromTop = window.scrollY;
-    if(!isMobile) {
-        if(spaceFromTop >= this.window.innerHeight && !showingNavbar) {
-            showingNavbar = true;
+const startScrollspy = () => {
+    window.addEventListener('scroll', function() {
+        const spaceFromTop = window.scrollY;
+        if(!isMobile) {
+            if(spaceFromTop >= this.window.innerHeight && !showingNavbar) {
+                showingNavbar = true;
+            }
+            if(spaceFromTop < this.window.innerHeight && showingNavbar) {
+                showingNavbar = false;
+            }
         }
-        if(spaceFromTop < this.window.innerHeight && showingNavbar) {
-            showingNavbar = false;
+        if(showingNavbar || isMobile) {
+            const threshold = 110;
+            const about = document.querySelector("#about").getBoundingClientRect().top <= threshold;
+            const portfolio = document.querySelector("#portfolio").getBoundingClientRect().top <= threshold;
+            
+            const workExperience = window.innerWidth <= 1800 ? document.querySelector("#work").getBoundingClientRect().top <= threshold : (window.innerHeight + window.scrollY) >= document.body.offsetHeight;
+            if(this.document.querySelector(".active")) this.document.querySelector(".active").classList.remove("active");
+            
+            if(workExperience) {
+                this.document.querySelector("#navlist").children[2].classList.add("active");
+            } else if(portfolio) {
+                this.document.querySelector("#navlist").children[1].classList.add("active");
+            } else if(about) {
+                this.document.querySelector("#navlist").children[0].classList.add("active");
+            }  
+            
         }
-    }
-    if(showingNavbar || isMobile) {
-        const threshold = 110;
-        const about = document.querySelector("#about").getBoundingClientRect().top <= threshold;
-        const portfolio = document.querySelector("#portfolio").getBoundingClientRect().top <= threshold;
-        
-        const workExperience = window.innerWidth <= 1800 ? document.querySelector("#work").getBoundingClientRect().top <= threshold : (window.innerHeight + window.scrollY) >= document.body.offsetHeight;
-        this.document.querySelector(".active").classList.remove("active");
-        
-        if(workExperience) {
-            this.document.querySelector("#navlist").children[2].classList.add("active");
-        } else if(portfolio) {
-            this.document.querySelector("#navlist").children[1].classList.add("active");
-        } else if(about) {
-            this.document.querySelector("#navlist").children[0].classList.add("active");
-        }  
-        
-    }
-});
+    });
+}
 
 const portfolio = (el, type = "web") => {
     document.querySelector(".categorySelector .active").classList.remove('active');
@@ -108,4 +110,5 @@ window.onload = function() {
 
     renderPortfolioItems();
     renderWorkExperience();
+    startScrollspy();
 }

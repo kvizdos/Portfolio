@@ -18,6 +18,10 @@ html[data-theme="dark"] img {
     opacity: .85
 }
 
+html[data-theme="dark"] img.headshot {
+    opacity: 1;
+}
+
 html[data-theme="dark"] #quote {
     background: rgb(34, 34, 34) url('./images/quote2.svg');
     background-size: 200px;
