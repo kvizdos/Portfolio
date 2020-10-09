@@ -165,6 +165,19 @@ const openPortfolioItem = (i) => {
     openModal(data);
 }
 
+const collapse = (item) => {
+    const alreadyActive = item.parentNode.classList.contains("active");
+
+    if(document.querySelector(".tlItem.active")) {
+        document.querySelector(".tlItem.active").childNodes[5].innerHTML = '<i class="fas fa-chevron-down"></i>'
+        document.querySelector(".tlItem.active").classList.remove("active");
+    }
+    if(!alreadyActive) {
+        item.parentNode.classList.add("active")
+        item.parentNode.childNodes[5].innerHTML = '<i class="fas fa-chevron-up"></i>';
+    }
+}
+
 const renderWorkExperience = () => {
     let i = 0;
     for(const location of workExperience) {
@@ -176,13 +189,16 @@ const renderWorkExperience = () => {
         </article>
         `
 
+        let x = 0;
         for(let exp of location.years) {
             tlData += `
             <article class="tlItem">
                 <p class="date">${exp.year}</p>
                 <p>${exp.desc}</p>
+                <button onclick="collapse(this)"><i class="fas fa-chevron-down"></i></button>
             </article>
             `
+            x++;
         } 
 
         let data = `

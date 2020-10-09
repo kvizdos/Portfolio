@@ -421,31 +421,46 @@ p.small {
 }
 
 .companyBadge {
-    box-shadow: 0 3px 10px rgb(65, 76, 107);
-    border-radius: 10px;
+    /* box-shadow: 0 3px 10px rgb(65, 76, 107); */
     width: fit-content;
     padding: 10px;
     display: flex;
     width: calc(100% - 20px);
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
     cursor: pointer;
 }
+
+.companyBadge:first-of-type {
+    border-radius: 10px 10px 0 0;
+}
+
+.companyBadge:last-of-type {
+    border-radius: 0 0 10px 10px;
+}
+
+.companyBadge.active {
+    transform: scale(1.15);
+    background-color: rgba(255, 255, 255, 0.35);
+    z-index: 10;
+    border-radius: 10px;
+}
+
 
 .companyBadge img {
     object-fit: cover;
 }
 
 .companyBadge a {
-    color: inherit;
     text-decoration: none;
+    color: white;
 }
 
 .workContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));;
-    grid-gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
 #quote {
@@ -480,7 +495,7 @@ section#portfolio {
 }
 
 section#portfolio .container {
-    width: 100%;
+    width: calc(100% - var(--content-padding));
 }
 
 section#portfolio .buttons:first-of-type {
@@ -511,18 +526,17 @@ section#work #aboutCo {
     display: flex;
     justify-self: center;
     align-self: center;
-    background-color: white;
     /* width: 50%; */
     border-radius: 15px;
     padding: 30px;
     transition: .2s;
     margin: 30px;
+    
+    padding-top: 0;
 }
 
 .whatIDid {
     display: none;
-    height: 500px;
-    overflow-y: scroll;
 }
 
 .whatIDid.active {
@@ -539,12 +553,15 @@ section#work #aboutCo {
 
 .whatIDid .tlItem {
     font-size: .75em;
+    backdrop-filter: blur(10px);
+    background-color: #00000017;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
 }
 
-.container#companies {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.whatIDid .tlItem p {
+    color: white;
 }
 
 hr {
@@ -617,10 +634,6 @@ ul li:not(.active) {
 .whatIDid a {
     color: inherit;
     text-decoration: none;
-}
-
-.companyBadge.active {
-    transform: scale(1.05);
 }
 
 
@@ -707,7 +720,59 @@ ul li:not(.active) {
     animation-direction: alternate;
 }
 
+#work .largeShrink {
+    display: inherit;
+}
+
+#work .largeShrink .timeline::-webkit-scrollbar {
+    display: none;
+  }
+
+#work .largeShrink .timeline {
+    height: 500px;
+    overflow-y: scroll;
+    width: calc(100vw - 140px)
+}
+
+#work .whatIDid a {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    color: white;
+}
+
+#work .whatIDid .tlItem.active p:not(.date) {
+    white-space: unset;
+}
+
+#work .whatIDid .tlItem p:not(.date) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgb(236, 236, 236);
+}
+
+#work .whatIDid .tlItem button {
+    background-color: unset;
+    border: none;
+    color: white;
+    cursor: pointer;
+    align-self: center;
+    width: 100%;
+    font-size: 2em;
+    padding: 5px;
+    align-self: self-start;
+}
+
 @media (min-width: 755px) {
+    #work .largeShrink .timeline {
+        width: unset;
+    }
+
+    #work .tlItem {
+        margin-bottom: 0;
+    }
+    
     section.halfover {
         margin-bottom: -125px !important;
     }
@@ -811,8 +876,9 @@ ul li:not(.active) {
     .whatIDid .tlItem {
         margin-top: 10px;
         display: grid;
-        grid-template-columns: 100px 1fr;
+        grid-template-columns: 100px 1fr 25px;
         font-size: 1em;
+        gap: 15px;
     }
 
     .whatIDid .tlItem p.date {
@@ -847,13 +913,13 @@ ul li:not(.active) {
 
     .companyBadge {
         transition: .2s;
-        transform: translateZ(0);
     }
 
     .companyBadge:not(.active):hover {
         cursor: pointer;
         transform: scale(1.1);
         transition: .2s;
+        border-radius: 5px;
     }
 
     #hero {
@@ -866,18 +932,6 @@ ul li:not(.active) {
         background-size: cover;
         background-repeat: no-repeat;
     }
-
-    /* #hero::after {
-        content: "";
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('images/map.png');
-        z-index: 0;
-        background-position: center;
-        background-blend-mode: saturation;
-    } */
 
     #hero img.headshot {
         width: 20%;
@@ -930,10 +984,6 @@ ul li:not(.active) {
     }
 } 
 
-#work .largeShrink {
-    display: inherit;
-}
-
 @media screen and (min-width: 2048px) {
     section#reel img {
         max-width: 45%;
@@ -962,11 +1012,5 @@ ul li:not(.active) {
 
     #quote blockquote p {
         font-size: 2em;
-    }
-
-    #companies {
-        display: flex;
-        align-self: center;
-        width: 50%;
     }
 }
