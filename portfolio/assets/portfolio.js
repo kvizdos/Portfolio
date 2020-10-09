@@ -109,7 +109,7 @@ const portfolioItems = [
 const renderPortfolioItems = () => {
     let i = 0;
     for(const item of portfolioItems) {
-        document.getElementById("portfolioWrapper").innerHTML += `<li class="${item.type == "mobile" ? "mobileApp" : "webApp"}" onclick="openPortfolioItem(${i})"><img src="assets/images/projects/${item.short || item.name.replace(/\ /g, '').toLowerCase()}.png"></li>`
+        document.getElementById("portfolioWrapper").innerHTML += `<li class="${item.type == "mobile" ? "mobileApp" : "webApp"}" onclick="openPortfolioItem(${i})"><img alt="${item.name}" src="assets/images/projects/${item.short || item.name.replace(/\ /g, '').toLowerCase()}.png"></li>`
         i++;
     }
 }
@@ -130,21 +130,18 @@ const openPortfolioItem = (i) => {
     }
 
     if(item.github != undefined) {
-        github = `<a href="${item.github}" target="_blank" class='btn github'><i class="fab fa-github-alt"></i> GitHub</a>`
+        github = `<a href="${item.github}" rel="noopener" target="_blank" class='btn github'><i class="fab fa-github-alt"></i> GitHub</a>`
     }
 
     if(item.live != undefined) {
-        live = `<a href="${item.live}" target="_blank" class='btn live'><i class="fas fa-external-link-alt"></i> Visit</a>`
+        live = `<a href="${item.live}" rel="noopener" target="_blank" class='btn live'><i class="fas fa-external-link-alt"></i> Visit</a>`
     }
-
-    console.log(github)
 
     // if(item.type == "mobile") {
         data = `
-        
         <section class="splitModal${item.type != "mobile" ? ' largerImg' : ''}">
             <article class="left">
-                <img src="assets/images/projects/${item.short || item.name.replace(/\ /g, '').toLowerCase()}.png">
+                <img alt="${item.name}" src="assets/images/projects/${item.short || item.name.replace(/\ /g, '').toLowerCase()}.png">
             </article>
             <article class="right">
                 ${status}
@@ -171,7 +168,7 @@ const renderWorkExperience = () => {
 
         document.getElementsByClassName("workContainer")[0].innerHTML += `
         <article class="companyBadge${i == 0 ? ' active' : ''}" onclick="showExp(this, '${location.place.toLowerCase()}')">
-            ${location.hasLogo ? `<img src="./assets/images/cos/${location.place.toLowerCase()}.png">` : `<p>${location.place}</p>`}
+            ${location.hasLogo ? `<img alt="${location.place}" src="./assets/images/cos/${location.place.toLowerCase()}.png">` : `<p>${location.place}</p>`}
         </article>
         `
 
@@ -186,7 +183,7 @@ const renderWorkExperience = () => {
 
         let data = `
         <article class="whatIDid${i == 0 ? ' active' : ''}" id="${location.place.toLowerCase()}">
-            <a href="${location.url}">${location.hasLogo ? `<img src="./assets/images/cos/${location.place.toLowerCase()}.png" width="200px">` : `<h2>${location.place}</h2>`}</a>
+            <a href="${location.url}">${location.hasLogo ? `<img alt="${location.place}" src="./assets/images/cos/${location.place.toLowerCase()}.png" width="200px">` : `<h2>${location.place}</h2>`}</a>
             <section class="timeline">
                 ${tlData}
             </section>
