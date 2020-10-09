@@ -374,6 +374,10 @@ nav.navbar .right i.close {
     box-shadow: 0 0 10px 0px #c7c7c7;
 }
 
+#whoIveWorkedFor img {
+    object-fit: cover;
+}
+
 .grid {
     display: flex;
     justify-content: center;
@@ -427,6 +431,10 @@ p.small {
     align-items: center;
     background-color: white;
     cursor: pointer;
+}
+
+.companyBadge img {
+    object-fit: cover;
 }
 
 .companyBadge a {
@@ -557,6 +565,7 @@ ul#certs li:hover {
 
 ul#certs li img {
     width: 100%;
+    object-fit: cover;
 }
 
 ul#certs li p {

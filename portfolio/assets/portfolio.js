@@ -5,6 +5,10 @@ const workExperience = [
         hasLogo: true,
         years: [
             {
+                year: "Now",
+                desc: "I am currently working with a small team to create a fully customized recruitment platform that assess possible candidates through multiple employee-created exercises. It is a serverless application that runs on AWS and uses Python as the backend language. Also, I've fully TDD'd the code to assure nearly-complete code coverage (as much as reasonably required), which allows me to refactor previously written code in a more readable, efficient, and optimized manner."
+            },
+            {
                 year: "2019",
                 desc: "During my second summer internship here, I was put on the task of creating a Slack bot for their team. This Slack bot was meant to connect into multiple endpoints and receive updates from multiple sales-related sites so that the entire team can stay in the loop, no matter where they are. This is important to follow up in their traditions, but it also allows them to complete traditions remotely."
             },
