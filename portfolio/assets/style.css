@@ -31,6 +31,82 @@ h2 {
     margin-bottom: 15px;
 }
 
+section.page#rvatech .container {
+    display: flex;
+    justify-content: center;
+    width: calc(100% - (var(--content-padding)));
+}
+
+section#reel {
+    position: relative;    
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    align-self: center;
+}
+section#reel img {
+    max-width: 85%;
+}
+
+section#reel > * {
+    background-color: white;
+    box-shadow: 0 0 15px 0 #00000025;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+section#reel #front {
+    padding: 25px;
+    text-align: center;
+}
+
+section#reel #front h2 {
+    font-size: 2em;
+}
+
+section#reel #front p {
+    width: 75%;
+    padding-top: 10px;
+}
+
+section#reel #front a {
+    text-decoration: none;
+    color: rgb(55, 134, 253);
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+section#reel #rear iframe {
+    width: 100%;
+    height: 100%;
+}
+
+section#reel h2 {
+    color: #e64125;
+}
+
+section.halfover {
+    position: relative;
+    margin-bottom: calc(-100% / 3) !important;
+}
+
+section.halfover .container {
+    padding-top: 0 !important;
+}
+
+section.halfover + section.page {
+    min-height: calc(200px + 50%);
+    padding-top: calc(250px + 25%) !important;
+}
+
 .hideOnDesktop {
     display: inherit;
 }
@@ -614,6 +690,17 @@ ul li:not(.active) {
     animation-direction: alternate;
 }
 
+@media (min-width: 755px) {
+    section.halfover {
+        margin-bottom: -125px !important;
+    }
+
+    section.halfover + section.page {
+        min-height: 200px;
+        padding-top: 175px !important;
+    }
+}
+
 @media (min-width: 915px) {
     /* section #work .workContainer {
         width: fit-content;
@@ -624,6 +711,24 @@ ul li:not(.active) {
 
     .hideOnMobile {
         display: inherit;
+    }
+
+    section.halfover {
+        margin-bottom: -200px !important;
+    }
+
+    section.halfover + section.page {
+        min-height: 200px;
+        padding-top: 200px !important;
+    }
+
+    section#rvatech .container {
+        padding: calc(2 * var(--content-padding));
+        width: calc(100% - (4 * var(--content-padding))) !important;
+    }
+
+    section#reel img {
+        max-width: 35%;
     }
 
     nav.navbar .right i.close {
@@ -798,6 +903,10 @@ ul li:not(.active) {
 }
 
 @media screen and (min-width: 2048px) {
+    section#reel img {
+        max-width: 45%;
+    }
+
     #work {
         display: flex;
         justify-content: center;
