@@ -479,6 +479,10 @@ section#portfolio {
     box-shadow: 0 0 var(--boxShadowBlur) var(--dividerBoxShadowColor);
 }
 
+section#portfolio .container {
+    width: 100%;
+}
+
 section#portfolio .buttons:first-of-type {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -529,7 +533,7 @@ section#work #aboutCo {
     font-size: 2em;
     font-weight: bold;
     text-align: center;
-    color: #71767d;
+    color: #57789a;
     margin-top: 15px;
 }
 
@@ -814,7 +818,7 @@ ul li:not(.active) {
     .whatIDid .tlItem p.date {
         font-size: 2em;
         font-weight: bold;
-        color: #BEBEBE;
+        color: #57789a;
         margin: 0;
     }
 
