@@ -855,10 +855,25 @@ ul li:not(.active) {
     #hero {
         display: flex;
         background: rgb(0,228,255);
-        background: linear-gradient(45deg, rgba(0,228,255,1) 0%, rgba(0,108,255,1) 100%);
+        background: radial-gradient(rgb(0, 119, 255), transparent), url('images/map.png'), linear-gradient(45deg, rgba(0,228,255,1) 0%, rgba(0,108,255,1) 100%);
         color: white;
         height: calc(100vh - 65px);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
+
+    /* #hero::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('images/map.png');
+        z-index: 0;
+        background-position: center;
+        background-blend-mode: saturation;
+    } */
 
     #hero img.headshot {
         width: 20%;
