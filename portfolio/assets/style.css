@@ -31,7 +31,11 @@ h2 {
     margin-bottom: 15px;
 }
 
-section.page#rvatech .container {
+section.page#rvatechsection {
+    position: relative;
+}
+
+section.page#rvatechsection .container {
     display: flex;
     justify-content: center;
     width: calc(100% - (var(--content-padding)));
@@ -718,7 +722,7 @@ ul li:not(.active) {
         padding-top: 200px !important;
     }
 
-    section#rvatech .container {
+    section#rvatechsection .container {
         padding: calc(2 * var(--content-padding));
         width: calc(100% - (4 * var(--content-padding))) !important;
     }
