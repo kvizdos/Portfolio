@@ -59,3 +59,7 @@ html[data-theme="dark"] #hero section h1 {
 html[data-theme="dark"] #hero section article p {
     color: black;
 }
+
+html[data-theme="dark"] section#reel > * {
+    background-color: rgb(238, 238, 238);
+}

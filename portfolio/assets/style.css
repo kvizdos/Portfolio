@@ -44,6 +44,7 @@ section#reel {
     justify-content: center;
     width: 75%;
     align-self: center;
+    z-index: 10;
 }
 section#reel img {
     max-width: 85%;
@@ -82,11 +83,6 @@ section#reel #front a {
     color: rgb(55, 134, 253);
     padding: 10px;
     font-size: 1.5em;
-}
-
-section#reel #rear iframe {
-    width: 100%;
-    height: 100%;
 }
 
 section#reel h2 {
