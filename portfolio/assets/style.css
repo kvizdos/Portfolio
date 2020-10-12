@@ -41,6 +41,21 @@ section.page#rvatechsection .container {
     width: calc(100% - (var(--content-padding)));
 }
 
+#row {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center !important;
+}
+
+#row > * {
+    margin: 25px;
+}
+
+.forceRight {
+    display: flex;
+    align-items: flex-start !important;
+}
+
 .anchor {
     position: absolute;top: -100px;border: 0; width: 0; height: 0;
     opacity: 0;
@@ -54,13 +69,6 @@ section#reel {
     width: 75%;
     align-self: center;
     z-index: 10;
-    transform: translate3d(-100vw, 0, 0);
-}
-
-section#reel.animate {
-    animation-name: reelDefaultState;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
 }
 
 @keyframes reelDefaultState {
@@ -948,7 +956,8 @@ ul li:not(.active) {
         background: rgb(0,228,255);
         background: radial-gradient(rgb(0, 119, 255), transparent), url('images/map.png'), linear-gradient(45deg, rgba(0,228,255,1) 0%, rgba(0,108,255,1) 100%);
         color: white;
-        height: calc(100vh - 65px);
+        height: 50vh;
+        min-height: 450px;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
