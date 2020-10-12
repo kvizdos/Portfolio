@@ -63,6 +63,12 @@ const startScrollspy = () => {
             }  
             
         }
+
+        if(true /* replace w/ prefered motion stuff */) {
+            const rvatech = !document.querySelector("#reel").classList.contains("animate") && document.querySelector("#certs > li:nth-child(2) > a > img").getBoundingClientRect().top <= 300;
+
+            if(rvatech) this.document.querySelector("#reel").classList.add("animate")
+        }
     });
 }
 
