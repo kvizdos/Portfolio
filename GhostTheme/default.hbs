@@ -54,13 +54,15 @@
             <section id="recommendedArticles">
                 {{#get "posts" limit="5" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags" as |related|}}
                     {{#foreach related}}
-                        <section class="recommendedArticle">
-                            <img src={{img_url feature_image size="s"}}>
-                            <article class="content">
-                                <h3>{{title}}</h3>
-                                <p>{{excerpt}}</p>
-                            </article>
-                        </section>
+                        <a href={{url}}>
+                            <section class="recommendedArticle">
+                                <img src={{img_url feature_image size="s"}}>
+                                <article class="content">
+                                    <h3>{{title}}</h3>
+                                    <p>{{excerpt}}</p>
+                                </article>
+                            </section>
+                        </a>
                     {{/foreach}}
                 {{/get}}
             </section>
