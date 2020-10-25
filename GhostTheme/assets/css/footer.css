@@ -4,4 +4,38 @@ footer {
     background-size: 200px;
     color: white;
     padding: 50px;
+    width: 100vw;
+}
+
+footer #recommendedArticles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 25px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+footer #recommendedArticles .recommendedArticle {
+    background-color: rgb(233, 233, 233);
+    color: black;
+    cursor: pointer;
+    transition-duration: 200ms;
+    border-radius: 20px;
+}
+
+footer #recommendedArticles .recommendedArticle:hover {
+    transform: scale(1.03);
+    transition-duration: 200ms;
+}
+
+footer #recommendedArticles .recommendedArticle .content {
+    padding: 10px;
+    margin: 0;
+}
+footer #recommendedArticles .recommendedArticle .content h3 {
+    margin: 0;
+}
+
+footer #recommendedArticles .recommendedArticle img {
+    width: 100%;
 }

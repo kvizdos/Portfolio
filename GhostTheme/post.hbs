@@ -19,16 +19,30 @@
             </figure>
             {{/if}}
 
+            <section id="aboutMe">
+                <article id="widthContainer">
+                    <article class="make3d animate" style="--make3dbg: rgba(128, 32, 224, 0.3);">
+                        <img src="{{primary_author.profile_image}}" />
+                    </article>
+                    <article class="card">
+                        <h3>Kenton Vizdos</h3>
+                        <p>My name is Kenton Vizdos and I am a senior at Deep Run High School's Center for Information Technology (CIT). Over the last few years, you may have seen me around town at ScrumRVA, Agile Richmond, Innovate Virginia, or one of the many other amazing Richmond events.</p>
+                        
+                        <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" class="twitter"><i class="fab fa-twitter"></i> {{primary_author.twitter}}</a>
+                    </article>
+                </article>
+            </section>
+
             <header id="post">
                 <h1 class="text-center" id="title">{{title}}</h1>
-            </header>
-            <section class="post-outter">
                 <section>
                     <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD YYYY"}}</time>
                 </section>
                 {{#primary_tag}}
                     <a class="tag" href="{{url}}">{{name}}</a>
                 {{/primary_tag}}
+            </header>
+            <section class="post-outter">
                 <div class="post-content">
                     {{content}}
                 </div>
@@ -40,7 +54,7 @@
                     <p>a clap is much appreciated if you enjoyed. No sign up or cost associated :)</p>
                 </article>
             </section>
-            <article class="postauthor">
+            {{!-- <article class="postauthor">
                 <article class="about">
                     <img src="{{primary_author.profile_image}}">
                     <article class="info">
@@ -54,8 +68,7 @@
                 <article class="support">
                     <a href="https://paypal.me/kentonv" target="_blank" alt="Support"><i class="fas fa-donate"></i></a>
                 </article>
-            </article>
+            </article> --}}
         </article>
-
 </section>
 {{/post}}
