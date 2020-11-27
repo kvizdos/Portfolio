@@ -38,6 +38,7 @@
     transition: .3s;
     transform: scale(0);
 
+    font-size: 1.2em;
 }
 
 #modal.show #modalContent {

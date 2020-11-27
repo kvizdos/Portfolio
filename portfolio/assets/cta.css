@@ -1,4 +1,5 @@
-form#cta input {
+form#cta input,
+form#cta textarea {
     font-size: 1.25em;
     margin-right: 15px;
     margin-top: 15px;
@@ -24,6 +25,13 @@ form#cta input[type="submit"]:disabled {
     border: 2px solid #6f6ff6;
     color: white;
     cursor: unset;
+}
+
+html[data-theme='dark'] form#cta input:not([type="submit"]),
+html[data-theme='dark'] form#cta textarea {
+    background-color: rgb(33, 35, 48);
+    border: 2px solid #40405f;
+    color: rgb(212, 212, 212);
 }
 
 form#cta.bad input:placeholder-shown:not([type="submit"]):not(#company) {

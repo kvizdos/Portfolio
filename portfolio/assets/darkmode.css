@@ -1,21 +1,32 @@
 :root[data-theme="dark"] {
-    --dividerBoxShadowColor: #ededed;
-}
-
-html[data-theme="dark"] {
-    filter: invert(1) hue-rotate(180deg);
-    -webkit-filter: invert(1) hue-rotate(180deg);
+    --dividerBoxShadowColor: #090b18;
+    --textColor: rgb(145, 145, 145);
 }
 
 html[data-theme="dark"] body {
-    background-color: rgb(252, 252, 252);
+    background-color: rgb(33, 33, 34);
+}
+
+html[data-theme="dark"] p,
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] li,
+html[data-theme="dark"] i {
+    color: var(--textColor);
+}
+
+html[data-theme="dark"] .btn:not(.live) {
+    border: 2px solid var(--textColor);
+    color:  var(--textColor);
 }
 
 html[data-theme="dark"] img {
-    filter: invert(1) hue-rotate(180deg);
-    -webkit-filter: invert(1) hue-rotate(180deg);
-
     opacity: .85
+}
+
+html[data-theme="dark"] #hero {
+    opacity: .85;
 }
 
 html[data-theme="dark"] img.headshot {
@@ -23,47 +34,46 @@ html[data-theme="dark"] img.headshot {
 }
 
 html[data-theme="dark"] #quote {
-    background: rgb(34, 34, 34) url('./images/quote2.svg');
+    background: rgb(31, 45, 83) url('./images/quote2.svg');
     background-size: 200px;
-    filter: invert(1) hue-rotate(155deg);
-    -webkit-filter: invert(1) hue-rotate(155deg);
 }
 
 html[data-theme="dark"] #quote i,
 html[data-theme="dark"] #quote blockquote p,
 html[data-theme="dark"] #quote blockquote footer {
-    color: white;
+    color: var(--textColor);
 }
 
 html[data-theme="dark"] .wrapper li img {
-    box-shadow: none;
+    box-shadow: 0 5px 8px var(--dividerBoxShadowColor);
+}
+
+html[data-theme="dark"] nav.navbar {
+    background: rgb(17, 17, 24);
+    color: rgb(202, 202, 202);
 }
 
 html[data-theme="dark"] nav.navbar ul li.contact {
-    background-color: rgb(43 197 90);
-    color: black;
-}
-
-html[data-theme="dark"] #hero {
-    color: black !important;
-}
-
-html[data-theme="dark"] #hero section h1::after {
-    color: black;
-}
-
-html[data-theme="dark"] #hero section h1 {
-    color: rgb(34 100 132);
-}
-
-html[data-theme="dark"] #hero section article p {
-    color: black;
+    background: rgb(43, 197, 90);
+    color: rgb(236, 236, 236);
 }
 
 html[data-theme="dark"] section#reel > * {
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(31, 35, 48);
 }
 
-html[data-theme="dark"] .whatIDid .tlItem p.date {
-    color: rgb(43, 43, 43);
+html[data-theme="dark"] section#work {
+    background: rgb(39, 43, 49);
+}
+
+html[data-theme="dark"] #modal #modalContent {
+    background-color: rgb(45, 48, 54);
+}
+
+html[data-theme="dark"] #work .whatIDid h2 {
+    color: rgb(185, 185, 185);
+}
+
+html[data-theme="dark"] #work .whatIDid .tlItem p:not(.date) {
+    color: var(--textColor);
 }

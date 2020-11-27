@@ -171,7 +171,7 @@ section.halfover + section.page {
 nav.navbar {
     position: sticky;
     position: -webkit-sticky;
-    top: 0;
+    top: -1px;
     z-index: 100;
     width: calc(100% - 25px);
     box-shadow: 0 var(--boxShadowOffset) var(--boxShadowBlur) -2px #00000070;
@@ -530,7 +530,7 @@ section#portfolio .buttons:first-of-type {
 }
 
 section#work {
-    background: url('./images/background.jpg');
+    background: rgb(240, 240, 240);
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -665,7 +665,6 @@ ul li:not(.active) {
 
 .page#about {
     position: relative;
-    box-shadow: 0 0 var(--boxShadowOffset) var(--dividerBoxShadowColor);
     z-index: 10;
 }
 
@@ -766,6 +765,9 @@ ul li:not(.active) {
     align-items: center;
     color: white;
 }
+#work .whatIDid h2 {
+    color: rgb(44, 44, 44);
+}
 
 #work .whatIDid .tlItem.active p:not(.date) {
     white-space: unset;
@@ -775,7 +777,7 @@ ul li:not(.active) {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: rgb(236, 236, 236);
+    color: rgb(80, 80, 80);
 }
 
 #work .whatIDid .tlItem button {
