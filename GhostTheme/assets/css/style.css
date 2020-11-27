@@ -5,7 +5,7 @@
     -o-transition: none !important;
 }
 
-html[data-theme="dark"] {
+/* html[data-theme="dark"] {
     filter: invert(1) hue-rotate(180deg);
     -webkit-filter: invert(1) hue-rotate(180deg);
 }
@@ -15,6 +15,10 @@ html[data-theme="dark"] img {
     -webkit-filter: invert(1) hue-rotate(180deg);
 
     opacity: .75
+} */
+
+html[data-theme='dark'] body {
+    background-color: var(--darkBg);
 }
 
 header#home {

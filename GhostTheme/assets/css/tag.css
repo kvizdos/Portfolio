@@ -15,6 +15,10 @@
     margin-bottom: 5px;
 }
 
+html[data-theme='dark'] .tagHeaderContainer h1 {
+    color: var(--textColor);
+}
+
 .tagHeaderContainer h2 {
     color: rgb(177, 177, 177);
 }

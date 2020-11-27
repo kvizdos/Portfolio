@@ -15,6 +15,10 @@
     --pink: #fa3a57;
     --brown: #a3821a;
     --darkmode: color(var(--darkgrey) l(+2%));
+    --textColor: rgb(175, 175, 175);
+    --darkBg: rgb(33, 33, 34);
+    --darkAccent: rgb(39, 43, 49);
+    --darkHoverAccent: rgb(55, 59, 65);
 }
 
 /* Reset

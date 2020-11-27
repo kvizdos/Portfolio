@@ -7,6 +7,13 @@ footer {
     width: 100vw;
 }
 
+html[data-theme='dark'] footer {
+    background: rgb(30, 41, 68) url('../images/footerbg.svg');
+    background-attachment: fixed;
+    background-size: 200px;
+
+}
+
 footer #recommendedArticles {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -24,6 +31,11 @@ footer #recommendedArticles .recommendedArticle {
     border-radius: 20px;
 }
 
+html[data-theme='dark'] footer #recommendedArticles .recommendedArticle {
+    background-color: var(--darkAccent);
+    color: var(--textColor);
+}
+
 footer #recommendedArticles .recommendedArticle:hover {
     transform: scale(1.03);
     transition-duration: 200ms;
@@ -39,4 +51,8 @@ footer #recommendedArticles .recommendedArticle .content h3 {
 
 footer #recommendedArticles .recommendedArticle img {
     width: 100%;
+}
+
+html[data-theme='dark'] footer #recommendedArticles .recommendedArticle img {
+    opacity: .85;
 }
