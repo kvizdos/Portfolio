@@ -1,5 +1,10 @@
 const isMobile = window.innerWidth <= 915;
 
+const scrollFunc = window.requestAnimationFrame ||
+                    function(callback) {
+                        setTimeout(callback, 1000/60)
+                    }
+
 let showingNavbar = false;
 
 const swipeFirstPage = () => {
@@ -34,9 +39,29 @@ const swipeFirstPage = () => {
     }, 200)
 }
 
+const isElementShowing = (el) => {
+    var rect = el.getBoundingClientRect();
+    var elemTop = rect.top;
+    var elemBottom = rect.bottom;
+    const mobileOffset = +getComputedStyle(el).getPropertyValue("--mobileOffset") || -1;
+    const mobileOffsetWithin = +getComputedStyle(el).getPropertyValue("--mobileOffsetWithin") || -1;
 
-const startScrollspy = () => {
-    window.addEventListener('scroll', function() {
+    const desktopOffset = +getComputedStyle(el).getPropertyValue("--desktopOffset") || -1;
+
+    var isVisible = false;
+    
+    if(isMobile && mobileOffset != -1) {
+        isVisible = elemTop - (el.offsetHeight * mobileOffset) <= (mobileOffsetWithin != -1 ? mobileOffsetWithin : 500);
+    } else if(desktopOffset != -1) {
+        isVisible = elemTop - (el.offsetHeight * desktopOffset) <= 500;
+    } else {
+        isVisible = (elemTop >= -500) && (elemBottom <= window.innerHeight);
+    }
+
+    return isVisible;
+}
+
+const scrollspyLoop = () => {
         const spaceFromTop = window.scrollY;
         if(!isMobile) {
             if(spaceFromTop >= this.window.innerHeight && !showingNavbar) {
@@ -61,15 +86,17 @@ const startScrollspy = () => {
             } else if(about) {
                 this.document.querySelector("#navlist").children[0].classList.add("active");
             }  
-            
         }
 
-        // if(true /* replace w/ prefered motion stuff */) {
-        //     const rvatech = !document.querySelector("#reel").classList.contains("animate") && document.querySelector("#certs > li:nth-child(2) > a > img").getBoundingClientRect().top <= 300;
+        const showEls = document.querySelectorAll('.showOnScroll');
 
-        //     if(rvatech) this.document.querySelector("#reel").classList.add("animate")
-        // }
-    });
+        showEls.forEach(el => {
+            if(isElementShowing(el)) {
+                el.classList.add('showing');
+            }
+        })
+
+    scrollFunc(scrollspyLoop)
 }
 
 const portfolio = (el, type = "web") => {
@@ -116,5 +143,7 @@ window.onload = function() {
 
     renderPortfolioItems();
     renderWorkExperience();
-    startScrollspy();
+    // startScrollspy();
+    scrollspyLoop();
+
 }
