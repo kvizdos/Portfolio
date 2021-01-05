@@ -71,6 +71,19 @@ section#reel {
     z-index: 10;
 }
 
+section#reel .showOnScroll {
+    --animation: .4s ease;
+    --mobileOffset: .5;
+    transition: var(--animation);
+    transform: scale(.7) translate(0, 100px);
+    opacity: 0;
+}
+
+section#reel .showOnScroll.showing {
+    opacity: 1;
+    transform: scale(1);
+}
+
 @keyframes reelDefaultState {
     from {
         transform: translate(-100vw, 0);
@@ -603,7 +616,7 @@ ul {
 ul#certs {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
 }
 
 ul#certs li:hover {
@@ -640,6 +653,21 @@ ul li:not(.active) {
     list-style: none;
     margin: 1em auto;
     padding: 0;
+}
+
+.wrapper li.showOnScroll {
+    opacity: 0;
+    --animation: .4s ease;
+    --mobileOffset: .5;
+    --mobileOffsetWithin: 600;
+
+    transform: scale(.7);
+    transition: var(--animation);
+}
+
+.wrapper li.showOnScroll.showing {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .wrapper li.webApp {
@@ -793,6 +821,10 @@ ul li:not(.active) {
 }
 
 @media (min-width: 755px) {
+    .wrapper li.showOnScroll {
+        --animation: opacity calc(.4s + (var(--index) * .3s)) ease;
+    }
+
     section#reel.animate {
         animation-duration: 2s;
     }

@@ -113,7 +113,7 @@ const portfolioItems = [
 const renderPortfolioItems = () => {
     let i = 0;
     for(const item of portfolioItems) {
-        document.getElementById("portfolioWrapper").innerHTML += `<li class="${item.type == "mobile" ? "mobileApp" : "webApp"}" onclick="openPortfolioItem(${i})"><img alt="${item.name}" src="assets/images/projects/${item.short || item.name.replace(/\ /g, '').toLowerCase()}.png"></li>`
+        document.getElementById("portfolioWrapper").innerHTML += `<li class="${item.type == "mobile" ? "mobileApp" : "webApp"} showOnScroll" onclick="openPortfolioItem(${i})" style="--index: ${i};"><img alt="${item.name}" src="assets/images/projects/${item.short || item.name.replace(/\ /g, '').toLowerCase()}.png"></li>`
         i++;
     }
 }
