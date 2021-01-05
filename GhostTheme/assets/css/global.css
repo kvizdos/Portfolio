@@ -300,11 +300,6 @@ body {
     -moz-font-feature-settings: "liga" on;
 }
 
-::selection {
-    text-shadow: none;
-    background: color(var(--blue) lightness(+30%));
-}
-
 hr {
     position: relative;
     display: block;
