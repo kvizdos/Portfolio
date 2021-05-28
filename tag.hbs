@@ -1,0 +1,25 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{> latestheader}}
+{{> navbar }}
+<section class="container center">
+    {{#tag}}
+    <article class="tagHeaderContainer">
+        <h1 class="site-title">{{name}}</h1>
+        <h2 class="site-description">
+            {{#if description}}
+            {{description}}
+            {{else}}
+            A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+            {{/if}}
+        </h2>
+    </article>    
+    {{/tag}}
+
+    <div id="postsContainer">
+        {{#foreach posts}}
+            {{> post}}
+        {{/foreach}}
+    </div>
+</section>

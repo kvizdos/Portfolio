@@ -1,0 +1,25 @@
+{{#post}}
+<footer id="main">
+        <section id="aboutMeFooter">
+            <article id="about">
+                <img src="{{primary_author.profile_image}}">
+                <section>
+                    <h1>About me</h1>
+                    <p>{{primary_author.bio}}</p>
+                    <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank">{{primary_author.twitter}}</a>
+                </section>
+            </article>
+            <article id="latestPosts">
+                <h1>Want to read a little bit? Check out my latest posts:</h1>
+                <ol>
+                {{#get "posts" limit="5"  as |related|}}
+                    {{#foreach related}}
+                        <li><a href="{{url}}">{{title}}</a></li>
+                    {{/foreach}}
+                {{/get}}
+                </ol>
+            </article>
+        </section>
+    &copy; {{date format="YYYY"}} {{@site.title}}
+</footer>
+{{/post}}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>{{meta_title}}</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/f40d5f26b8.js" crossorigin="anonymous"></script>
+    <script src="{{assets}}/assets/js/nav.js"></script>
+    <script>
+        function toggleDarkmode(forceDark = false, forceLight = false) {
+            const html = document.querySelector('html');
+            const togBtn = document.querySelectorAll('#nightmodeToggle i')
+
+            const enableDarkmode = html.dataset.theme != undefined && html.dataset.theme == "light";
+
+            togBtn[0].classList.remove((enableDarkmode || forceDark) && !forceLight ? "far" : "fas");
+            togBtn[0].classList.add((enableDarkmode || forceDark) && !forceLight ? "fas" : "far");
+            togBtn[1].classList.remove((enableDarkmode || forceDark) && !forceLight ? "far" : "fas");
+            togBtn[1].classList.add((enableDarkmode || forceDark) && !forceLight ? "fas" : "far");
+
+            html.dataset.theme = (enableDarkmode || forceDark) && !forceLight ? "dark" : "light";
+
+            localStorage.setItem("darkmode", (enableDarkmode || forceDark) && !forceLight);
+        }
+    </script>
+    <link rel="stylesheet" href="{{assets}}/assets/css/global.css">
+    <link rel="stylesheet" href="{{assets}}/assets/css/style.css">
+    <link rel="stylesheet" href="{{assets}}/assets/css/posts.css">
+    <link rel="stylesheet" href="{{assets}}/assets/css/navbar.css">
+    <link rel="stylesheet" href="{{assets}}/assets/css/post.css">
+    <link rel="stylesheet" href="{{assets}}/assets/css/tag.css">
+    <link rel="stylesheet" href="{{assets}}/assets/css/footer.css">
+
+    {{ghost_head}}
+    
+    {{#is "post"}}
+        <meta name="og:image" content="https://cdn.home.kentonvizdos.com/social-cards?title={{post.title}}&slug={{post.slug}}&author={{post.primary_author.name}}&time={{post.reading_time}}">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="https://cdn.home.kentonvizdos.com/social-cards?title={{post.title}}&slug={{post.slug}}&author={{post.primary_author.name}}&time={{post.reading_time}}">
+    {{/is}}
+</head>
+
+<body class="{{body_class}}">
+    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    {{{body}}}
+   
+    {{> footer}}
+   
+    {{ghost_foot}}
+
+    <script>
+        document.querySelectorAll(".css-transitions-only-after-page-load").forEach(el => el.classList.remove("css-transitions-only-after-page-load"));
+        const enableDarkmode = (window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem("darkmode") == "true") && (localStorage.getItem("darkmode") != "false");
+
+        toggleDarkmode(enableDarkmode, !enableDarkmode)
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            const enableDarkmode2 = event.matches;
+
+            toggleDarkmode(enableDarkmode2, !enableDarkmode2)
+        })
+    </script>
+
+    {{#is "page, post" }}
+        <script src="{{assets}}/assets/js/imageSelect.js"></script>
+    {{/is}}
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<script>
+    function toggleDarkmode(forceDark = false, forceLight = false) {
+            const html = document.querySelector('html');
+            const togBtn = document.querySelectorAll('#nightmodeToggle i')
+
+            const enableDarkmode = html.dataset.theme != undefined && html.dataset.theme == "light";
+
+            togBtn[0].classList.remove((enableDarkmode || forceDark) && !forceLight ? "far" : "fas");
+            togBtn[0].classList.add((enableDarkmode || forceDark) && !forceLight ? "fas" : "far");
+            togBtn[1].classList.remove((enableDarkmode || forceDark) && !forceLight ? "far" : "fas");
+            togBtn[1].classList.add((enableDarkmode || forceDark) && !forceLight ? "fas" : "far");
+
+            html.dataset.theme = (enableDarkmode || forceDark) && !forceLight ? "dark" : "light";
+
+            localStorage.setItem("darkmode", (enableDarkmode || forceDark) && !forceLight);
+    }
+</script>
+
+<nav class="main{{type}}">
+    <ul id="desktop">
+        <article class="left">
+            <li id="blogName"><a tabindex="0" href="/">Kenton Vizdos</a></li>
+            <li><a tabindex="0" href="/blog">Blog</a></li>
+
+            {{!-- <li><a tabindex="0" href="/community/login">Community</a></li> --}}
+            {{!-- <li class="dropdown">
+                Categories
+                <ul>
+                    {{#get "tags" limit="all"}}
+                        {{#foreach tags visibility="all"}}
+                            <li><a href="{{url}}">{{name}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                </ul>
+            </li> --}}
+        </article>
+        <article class="right">
+            <li tabindex="0" id="nightmodeToggle" onclick="toggleDarkmode();" onkeydown="if(event.keyCode === 13 || event.keyCode == 32){ toggleDarkmode(); }"><i class="far fa-moon"></i></li>
+
+            {{#if @member}}
+                <li tabindex="0" id="profileContainer" class="dropdown" aria-roledescription="dropdown">
+                    <img src="{{@member.avatar_image}}" />
+
+                    <ul class="rightDrop">
+                        <li><a tabindex="0" href="/community/profile">Profile</a></li>
+                        <li><a tabindex="0" href="javascript:" data-members-signout>Sign out <i class="fa fa-sign-out-alt"></i></a></>
+
+                    </ul>
+                </li>
+            {{/if}}
+
+        </article>
+    </ul>
+
+    <ul id="mobile">
+        <article class="left">
+            <li id="blogName"><a href="/">Kenton Vizdos</a></li>
+        </article>
+        <article class="right">
+            <li id="nightmodeToggle" onclick="toggleDarkmode();"><i class="far fa-moon"></i></li>
+            <li><i class="fas fa-bars" onclick="openNav()"></i></li>
+            
+            <ul class="navigator css-transitions-only-after-page-load">
+                <article>
+                    <i class="close fas fa-times" onclick="closeNav()"></i>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog">Blog</a></li>
+
+                    {{#if @member}}
+                        <li tabindex="0" id="profileContainer" class="dropdown" aria-roledescription="dropdown">
+                            <img src="{{@member.avatar_image}}" /><span> {{@member.firstname}}</span>
+
+                            <ul class="rightDrop">
+                                <li><a tabindex="0" href="/community/profile">Profile</a></li>
+                                <li><a tabindex="0" href="javascript:" data-members-signout>Sign out <i class="fa fa-sign-out-alt"></i></a></>
+
+                            </ul>
+                        </li>
+                    {{/if}}
+                </article>
+            </ul>
+        </article>
+    </ul>
+</nav>
+
+{{#if type}}
+    <span class="stickyContentBack show"></span>
+    {{else}}
+    <span class="stickyContentBack noshow"></span>
+{{/if}}

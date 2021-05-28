@@ -1,0 +1,72 @@
+{{!< default}}
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+    }
+
+    .stickyContentBack {
+        display: none !important;
+    }
+</style>
+
+{{> navbar type=" sticky" }}
+
+<main>
+    <section class="split50">
+        <article class="left">
+            <h2>Why join my community?</h2>
+            <p>You'll get access to member-only perks such as:</p>
+            <ul>
+                <li>Post comments and reply to others</li>
+                <li>Access to member-only posts &amp; notes</li>
+                <li>Newsletter with a debrief of my top posts, as well as exclusive updates on my projects</li>
+                <li class="optional">Member-only Discord programming / makers server</li>
+                <li>...and more coming soon</li>
+            </ul>
+        </article>
+        <article class="right">
+            <article class="widget">
+                <strong>Already have an account?</strong>
+                <p>Login by using a one-time use magic link sent to your email</p>
+                <form class="signin-form fancy" data-members-form="signin">
+                    <section class="formContainer">
+                        <input data-members-email class="fancyInput" type="email" placeholder="Account email" required="true" autocomplete="false" />
+                        <button type="submit"></button>
+                    </section>
+                    <p data-members-error><!-- error message will appear here --></p>                    
+                </form>
+            </article>
+
+            <article class="widget">
+                <strong>Join the community</strong>
+                <p>Need an account? Create one for free today:</p>
+                <form data-members-form="subscribe" class="fancy subscribe multiple">
+                    <section class="formContainer">
+                        <input data-members-label type="hidden" value="Early Adopters" />
+                        <input data-members-name type="text" placeholder="Your name" required="true"/>
+                        <input data-members-email type="email" placeholder="Your email" required="true"/>
+                        <button type="submit"></button>
+                    </section>
+                    <p data-members-error><!-- error message will appear here --></p>                    
+                </form>
+            </article>
+        </article>
+    </section>
+</main>
+    {{!-- <form class="signin-form" data-members-form="signin">
+        <h1 class="signin-title">Welcome back!</h1>
+        <p>Sign into your account again for full access</p>
+        <div class="signin-box">
+                <input data-members-email type="email" placeholder="Your email address" required="true" autocomplete="false" />
+            <button class="button primary" type="submit">
+                    <span class="button-content">Send login link</span>
+            </button>
+        </div>
+        <p><small>Don't have an account yet? <a href="{{@site.url}}/signup/">Sign up</a></small></p>
+        <div class="message-success"><strong>Great!</strong> Check your inbox and click the link to complete signin</div>
+        <div class="message-error">Please enter a valid email address!</div>
+    </form> --}}

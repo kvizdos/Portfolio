@@ -1,0 +1,15 @@
+routes:
+    /community/login/:
+        permalink: /community/login
+        template: page-signin
+
+collections:
+    /blog/:
+        permalink: /blog/{slug}/
+        template: blog
+    /:
+        permalink: /{slug}/
+        template: index
+taxonomies:
+    tag: /tag/{slug}/
+    author: /author/{slug}/

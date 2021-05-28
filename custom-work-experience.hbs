@@ -1,0 +1,37 @@
+{{!< default}}
+
+<link rel="stylesheet" href="/assets/css/templates/work.css">
+
+{{> navbar type=" sticky"}}
+
+{{#post}}
+<section class="container center">
+    <section id="content">
+        <header>
+            {{#if feature_image}}
+                <img src="{{feature_image}}" class="logo" />
+            {{else}}
+                <h1>{{title}}</h1>
+            {{/if}}
+        </header>
+
+        {{content}}
+    </section>
+
+    <section id="footer">
+        <section id="footerContainer">
+            <h1>My other experience includes...</h1>
+        </section>
+
+        <section id="footerGrid">
+        {{#get "pages" visibility="all" limit="3" filter="primary_tag:experience"}}
+            {{#foreach pages}}
+                <a href="{{url}}">
+                    <img alt="{{title}}" src="{{feature_image}}" class="logo hoverable">
+                </a>
+            {{/foreach}}
+        {{/get}}
+        </section>
+    </section>
+</section>
+{{/post}}

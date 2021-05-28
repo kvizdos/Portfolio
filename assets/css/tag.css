@@ -1,0 +1,28 @@
+.tagHeaderContainer h3,
+.tagHeaderContainer h2, 
+.tagHeaderContainer h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.tagHeaderContainer h3 {
+    font-size: 1.5em;
+    color: rgb(177, 177, 177);
+}
+
+.tagHeaderContainer h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+html[data-theme='dark'] .tagHeaderContainer h1 {
+    color: var(--textColor);
+}
+
+.tagHeaderContainer h2 {
+    color: rgb(177, 177, 177);
+}
+
+.tagHeaderContainer {
+    margin-bottom: 40px;
+}

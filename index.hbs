@@ -1,0 +1,273 @@
+<!-- TODO: Add CTF backend + integrate CTA into blog -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="I'm a high school student in Richmond, VA studying full stack web development." />
+    <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript, NodeJS, web development, web, developer, front end, full stack, code, programming. for hire">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@kvizdos" />
+    <meta name="twitter:image" content="https://kentonvizdos.com/assets/portfolio/images/ogcard.png" />
+
+    <meta property="og:title" content="My web development portfolio." />
+    <meta property="og:image" content="https://kentonvizdos.com/assets/portfolio/images/ogcard.png" />
+
+    <meta property="og:description" content="I'm a high school student in Richmond, VA studying full stack web development." />
+
+
+    <title>Kenton Vizdos - full stack web developer</title>
+
+    <script src="https://kit.fontawesome.com/f40d5f26b8.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/portfolio/style.css">
+    <link rel="stylesheet" href="assets/portfolio/modal.css">
+    <link rel="stylesheet" href="assets/portfolio/cta.css">
+    <link rel="stylesheet" href="assets/portfolio/darkmode.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+
+    <link rel="shortcut icon" href="./assets/portfolio/images/headshot.jpg" type="image/x-icon">
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-base64@2.5.2/base64.min.js"></script>
+    <script src="assets/portfolio/email.js"></script>
+
+    <script src="assets/portfolio/modal.js"></script>
+    <script src="assets/portfolio/portfolio.js"></script>
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/portfolio/nav.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    {{!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47286500-7"></script> --}}
+
+    <script>
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;domain=.kentonvizdos.com";
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+    </script>
+
+    <script>
+        if(false) {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-47286500-7');
+    }
+    </script>
+</head>
+<body>
+    <section id="hero" class="page noNav centerBy3">
+        <section></section>
+        <section>
+            <article id="row" class="forceRight">
+                <img class="headshot" src="./assets/portfolio/images/headshot.jpg" alt="My headshot" />
+                    <section>
+                    <h1>Kenton Vizdos</h1>
+                    <p>I'm a high school student in Richmond, VA studying full stack web development</p>
+                    <article class="socialBtns">
+                        <a aria-label="LinkedIn" rel="noopener" href="https://www.linkedin.com/in/kentonvizdos/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a aria-label="Twitter" rel="noopener" href="http://twitter.com/kvizdos" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </article>
+                </section>
+            </article>
+<!-- 
+            <ul id="whoIveWorkedFor" class="flatList">
+                <li><a href="#work" aria-label="Look at my Singlestone experience"><img src="./assets/portfolio/images/cos/singlestone.png" alt="Singlestone"></a></li>
+                <li><a href="#work" aria-label="Look at my MetaCTF experience"><img src="./assets/portfolio/images/cos/metactf.png" alt="MetaCTF"></a></li>
+            </ul> -->
+        </section>
+
+        <!-- <a href="#page" id="goDown" aria-label="Scroll down"><i class="fas fa-chevron-down" id="downArrow"></i></a> -->
+    </section>
+
+
+    {{> navbar type=" sticky" }}
+
+    {{!-- <nav class="navbar">
+        <p>Kenton Vizdos</p>
+        <article class="right">
+            <ul id="navlist">
+                <li><a onclick="closeNav()" href="#about" class="active">About</a></li>
+                <li><a onclick="closeNav()" href="#portfolios">Portfolio</a></li>
+                <li><a onclick="closeNav()" href="#work">Work Experience</a></li>
+                <li><a rel="noopener" href="https://blog.kentonvizdos.com">Blog <i class="fas fa-external-link-alt" style="padding-left: 10px;"></i></a></li>
+
+                <li id="nightmodeToggle" onclick="toggleDarkmode();" class="hideOnMobile"><i class="far fa-moon"></i></li>
+                
+                <li class="contact"><a onclick="closeNav()" href="#contact">Contact</a></li>
+            </ul>
+
+            <i class="far fa-moon hideOnDesktop" id="nightmodeToggle" onclick="toggleDarkmode();"></i>        
+            <i class="close fas fa-bars" onclick="openNav()"></i>
+        </article>
+    </nav> --}}
+
+    <section id="page">
+        <section class="page" id="about">
+            <section class="container">
+                <figure>
+                    <img class="headshot" src="./assets/portfolio/images/headshot.jpg" alt="My Headshot" />
+                </figure>
+
+                <!-- About section (dynamic) -->
+                {{#get "pages" visibility="all" filter="tag:about"}}
+                    {{#foreach pages}}
+                        <h2>{{title}}</h2>
+                        {{content}}
+                    {{/foreach}}
+                {{/get}}
+            
+                <ul id="certs">
+                    <li><a href="https://www.scrumalliance.org/community/profile/kvizdos" rel="noopener" target="_blank"><img src="assets/portfolio/images/certs/csm.png" alt="CSM"></a></li>
+                    <li><a href="https://www.scrumalliance.org/community/profile/kvizdos" rel="noopener" target="_blank"><img src="assets/portfolio/images/certs/cspo.png" alt="CSPO"></a></li>
+                </ul>
+            </section>
+        </section>
+        <section class="page halfover" id="rvatechsection">
+            <hr id="rvatech" class="anchor" />
+            <section class="container">
+                <section id="reel">
+                    <article id="front" class="showOnScroll">
+                            <img src="assets/portfolio/rvatech-gala.png" alt="RVATech Gala">
+                            <h2>2020 Next Gen Winner</h2>
+                            <p>This is awarded to a K-12 student who has demonstrated a meaningful impact on the technology ecosystem in Richmond.</p>
+                            <a rel="noopener" href="https://www.facebook.com/rvatechcouncil/videos/251154276333988/?t=606" target="_blank">Watch the announcement <i class="fas fa-external-link-alt"></i></a>
+                    </article>
+                </section>
+            </section>
+        </section>
+        <section class="page full" id="quote">
+            <i class="fas fa-quote-left"></i>
+            <blockquote>
+                <p>Programs must be written for people to read, and only incidentally for machines to execute.</p>
+                <footer>- Harold Abelson</footer>
+            </blockquote>
+
+        </section>
+
+        <section class="page" id="portfolio">
+            <hr id="portfolios" class="anchor" />
+            <section class="container">
+                <h2>What have I made?</h2>
+                <section class="buttons">
+                    <a rel="noopener" href="https://github.com/kvizdos/" target="_blank" class="btn github"><i class="fab fa-github-alt" aria-hidden="true"></i> GitHub</a>
+                </section>
+
+                <ul class="categorySelector">
+                    <li onclick="portfolio(this, 'all')" class="active">all</li>
+                    <li onclick="portfolio(this, 'web')">web</li>
+                    <li onclick="portfolio(this, 'mobile')">mobile</li>
+                </ul>
+                <ul id="portfolioWrapper" class="wrapper">
+                    {{#get "pages" visibility="all" filter="primary_tag:projects" include="tags"}}
+                        {{#foreach pages}}
+                            <a href="{{url}}">
+                                <section class="portfolioItem" style="background-image: url('{{feature_image}}')">
+                                    <article id="text">
+                                        <article id="devices">
+                                            {{#has tag="mobile"}}
+                                                <i class="fas fa-mobile"></i>
+                                            {{/has}}
+                                        </article>
+                                        <p>{{title}}</p>
+                                    </article>
+                                </section>
+                            </a>
+                        {{/foreach}}
+                    {{/get}}
+                </ul>
+            </section>
+        </section>
+
+        <section class="page full" id="work">
+            <section class="container" id="companies">
+                <h2>Where have I worked?</h2>
+                <p>Click a logo to read about what I did</p>
+                <article class="workContainer">
+                    {{#get "pages" visibility="all" filter="primary_tag:experience"}}
+                        {{#foreach pages}}
+                            <a href="{{url}}">
+                                <img alt="{{title}}" src="{{feature_image}}">
+                            </a>
+                        {{/foreach}}
+                    {{/get}}
+                </article>    
+            </section>
+        </section>
+
+        <section class="page" id="contact">
+            <section class="container">
+                <h2>Let's chat.</h2>
+                <p>If you're looking for a web developer, let's chat and see if I'm right for you.</p>
+                <!-- <form id="cta" onsubmit="submitEmail()" action="javascript:grecaptcha.reset()"> -->
+                <form id="cta" onsubmit="submitEmail()" action="javascript:console.log('submit')">
+                    <p class="bad">You are missing some required inputs or the captcha.</p>
+                    <p class="good">Your email has sent successfully, I will be in touch soon. Thank you!</p>
+                    
+                    <input type="text" id="name" placeholder="Your name.." aria-label="Your name: ">
+                    <input type="email" id="email" placeholder="Your email.." aria-label="Your email: ">
+                    <input type="text" id="company" placeholder="Your company.." aria-label="Your company (if applicable): ">
+                    <br>
+                    <textarea type="text" id="whatYouWant" placeholder="Your need or comment.."  aria-label="Your need or comment: "></textarea>
+                    <div class="g-recaptcha" data-sitekey="6LeoAuMUAAAAAOtIKbCFrbt6Y_qup0B48P47n7sd"></div>
+
+                    <input type="submit" value="Contact">
+                </form>
+            </section>
+        </section>
+
+
+        <footer class="page" id="main">
+            <section class="container">
+            <small>&copy; Kenton Vizdos 2020</small>
+            </section>
+        </footer>
+    </section>
+
+    <section id="modal">
+        <article id="modalContent">
+            <i class="fas fa-times" onclick="closeModal()"></i>
+            <article id="content"></article>
+        </article>
+        <article id="modalCloser" class="modalSide" onclick="closeModal()"></article>
+
+    </section>
+
+    <script>
+        document.querySelectorAll(".css-transitions-only-after-page-load").forEach(el => el.classList.remove("css-transitions-only-after-page-load"));
+        const enableDarkmode = (window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem("darkmode") == "true") && (localStorage.getItem("darkmode") != "false");
+
+        toggleDarkmode(enableDarkmode, !enableDarkmode)
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            const enableDarkmode2 = event.matches;
+
+            toggleDarkmode(enableDarkmode2, !enableDarkmode2)
+        })
+    </script>
+</body>
+</html>

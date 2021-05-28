@@ -1,0 +1,220 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+#containerInner {
+    width: 100%;
+}
+
+.container header {
+    position: relative;
+    width: 100%;
+    min-height: 475px;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    border-radius: 25px;
+
+    transform-origin: bottom center;
+
+    animation-name: projectFeatureImageScale;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 15px rgba(145, 145, 145, 0.45);
+
+}
+
+.container header:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    /* filter: blur(15px); */
+    
+    z-index: -1;
+
+    animation-name: projectFeatureImageScaleBefore;
+    animation-delay: .4s;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+
+    overflow: hidden;
+}
+
+html[data-theme='dark'] .container header {
+    /* filter: brightness(0.2) blur(15px); */
+    box-shadow: 0 10px 15px rgba(60, 65, 77, 0.45);
+}    
+
+.container header #text {
+    border-radius: 25px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 50px;
+    background: linear-gradient(0deg, #2525258a 45%, #b3b3b32f 100%);
+
+    opacity: 0;
+    
+    animation-name: projectFeatureTextBackgroundOpacity;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: .5s;
+}
+
+.container header #text p,
+.container header #text h1 {
+    padding: 10px;
+    margin: 0;
+    max-width: 800px;
+
+    opacity: 0;
+    transform: scale(0.65);
+    transform-origin: bottom left;
+
+    animation-name: projectFeatureTextAnimation;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-delay: .6s;
+}
+
+.container header #text h1 {
+    font-size: 2em;
+}
+
+.container header #text p {
+    font-size: 1.5em;
+}
+
+.container header #text p.tags {
+    font-size: 1.2em;
+    color: rgb(235, 235, 235);
+}
+
+#content {
+    padding: 25px;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+#content p {
+    font-size: 1.75em;
+    margin-bottom: 10px;
+}
+
+#content h1 {
+    font-size: 2.5em;
+    margin: 0;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+#content h2 {
+    font-size: 2em;
+    margin: 0;
+    margin-bottom: 10px;
+
+}
+
+#content h3 {
+    font-size: 1.75em;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+@keyframes projectFeatureImageScale {
+    from {
+        opacity: 0;
+        transform: scale3d(0.95, 0.95, 0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1.0, 1.0, 1.0);
+    }
+}
+
+@keyframes projectFeatureImageScaleBefore {
+    from {
+        filter: blur(0px);
+    }
+    to {
+        filter: blur(3px);
+    }
+}
+
+@keyframes projectFeatureTextBackgroundOpacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes projectFeatureTextAnimation {
+    from {
+        opacity: 0;
+        transform: scale3d(0.65, 0.65, 0.66);
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@media (min-width: 755px) {
+    #containerInner {
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+
+    #content {
+        width: 75%;
+    }
+
+    #content p {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    #content h1 {
+        font-size: 2.5em;
+        margin: 0;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    #content h2 {
+        font-size: 2em;
+        margin: 0;
+        margin-bottom: 10px;
+
+    }
+
+    #content h3 {
+        font-size: 1.75em;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+}

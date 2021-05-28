@@ -1,0 +1,17 @@
+<article class="{{post_class}} card">
+    {{#if feature_image}}
+    <img src="{{feature_image}}" />
+    {{else}}
+    <img src="http://localhost:3030/social-cards?title={{title}}&author={{primary_author.name}}&time={{reading_time}}&slug={{slug}}">
+    {{/if}}
+    <div class="card-body">
+        <a style="text-decoration-line: none;" href="{{url}}">
+            <h2>{{title}}</h2>
+        </a>
+        <p>{{excerpt words="33"}}</p>
+        <div>
+            <span class="reading-time">{{reading_time}}</span>
+            <span> - Published: {{date published_at timeago="true"}}</span>
+        </div>
+    </div>{{!--/.post-card-content--}}
+</article>

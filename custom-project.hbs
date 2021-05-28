@@ -1,0 +1,21 @@
+{{!< default}}
+
+<link rel="stylesheet" href="/assets/css/templates/project.css">
+
+{{> navbar type=" sticky"}}
+
+{{#post}}
+<section class="container center">
+    <section id="containerInner">
+        <header style="background-image: url('{{feature_image}}');">
+            <section id="text">
+                <h1>{{title}}</h1>
+                <p>{{excerpt words="20"}}</p>
+                <p class="tags">{{tags separator=" &bull; "}}</p>
+            </section>
+        </header>
+
+        <section id="content">{{content}}</section>
+    </section>
+</section>
+{{/post}}

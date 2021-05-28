@@ -1,0 +1,65 @@
+{{!< default}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+
+{{> navbar type=" sticky"}}
+
+<section class="container center">
+        <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+            {{#if feature_image}}
+            <figure class="post-full-image">
+                {{!-- This is a responsive image, it loads different sizes depending on device --}}
+                <img srcset="{{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 600w,
+                            {{img_url feature_image size="l"}} 1000w,
+                            {{img_url feature_image size="xl"}} 2000w" sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px" src="{{img_url feature_image size="xl"}}" alt="{{title}}" />
+            </figure>
+            {{/if}}
+
+            <section id="aboutMe">
+                <article id="widthContainer">
+                    <article class="make3d animate" style="--make3dbg: rgba(128, 32, 224, 0.3);">
+                        <img src="{{primary_author.profile_image}}" />
+                    </article>
+                    <article class="card">
+                        <h3>Kenton Vizdos</h3>
+                        <p>My name is Kenton Vizdos and I am a senior at Deep Run High School's Center for Information Technology (CIT). Over the last few years, you may have seen me around town at ScrumRVA, Agile Richmond, Innovate Virginia, or one of the many other amazing Richmond events.</p>
+                        
+                        <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" class="twitter"><i class="fab fa-twitter"></i> {{primary_author.twitter}}</a>
+                    </article>
+                </article>
+            </section>
+
+            <header id="post">
+                <h1 class="text-center" id="title">{{title}}</h1>
+                <section>
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD YYYY"}}</time>
+                </section>
+                {{#primary_tag}}
+                    <a class="tag" href="{{url}}">{{name}}</a>
+                {{/primary_tag}}
+            </header>
+            <section class="post-outter">
+                <div class="post-content">
+                    {{content}}
+                </div>
+                
+                <section class="post-actions">
+                    <span class="action-item">&nbsp;<a id="action-bookmark" href="javascript:"><i class="fa fa-bookmark"></i></a><span class="hide">&nbsp;Bookmark</span></span>
+                    <span class="action-item"><a id="action-heart" href="javascript:"><i class="fa fa-heart"></i></a><span class="hide">&nbsp;Like</span></span>
+
+                </section>
+            </section>
+            <section id="clapper">
+                <applause-button style="width: 58px; height: 58px" color="#3f9dff"></applause-button>
+                <article>
+                    <h2>Enjoy the article?</h2>
+                    <p>a clap is much appreciated if you enjoyed. No sign up or cost associated :)</p>
+                </article>
+            </section>
+        </article>
+</section>
+{{/post}}
