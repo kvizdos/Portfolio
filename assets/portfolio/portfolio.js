@@ -47,7 +47,7 @@ const workExperience = [
         years: [
             {
                 year: "2018+",
-                desc: "Deep Run CTF Planning Committee- I helped create a fun cyber security CTF (that was run on MetaCTF's platform) for middle school and high school students. This included problem writing and management during the competition"
+                desc: "Deep Run CTF Planning Committee- I helped create a fun cyber security CTF (that was run on MetaCTF's platform) for middle and high school students. This included problem writing and management during the competition"
             },
             {
                 year: "2018+",
